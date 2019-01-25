@@ -23,6 +23,6 @@ export default {
   ],
   disableRedirectHoist: true,
   routes: pageRoutes,
-  history: 'hash',
+  history: 'hash', // 配置hash路由
   base:""
 }
