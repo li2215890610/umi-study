@@ -1,11 +1,10 @@
+
 import React, { Component} from 'react';
 import { connect } from 'dva';
-import Indexs from "@/components/indexs/indexs";
-import RenderDiscountList from "@/components/renderDiscountList/renderDiscountList";
-import styles from './login.css';
+import styles from './users.css';
 
 
-class login extends Component {
+class users extends Component {
 
   
   constructor(props) {
@@ -15,23 +14,23 @@ class login extends Component {
     }
   }
 
- 
+  componentDidMount = ()=>{
+    console.log("加载了")
+    this.props.dispatch({
+      type:"users/getUsersList",
+      payload:{
+
+      }
+    })
+  }
+
   render() {
 
     return (
       <div>
-        <Indexs/>
-        <button onClick={this.onClicks.bind(this, 2)}>按钮</button>
-        Hello
-        <RenderDiscountList />
-
+          
       </div>
     );
-  }
-
-
-  componentDidMount = ()=>{
-    console.log("加载了")
   }
 
   //在渲染前调用
@@ -74,4 +73,6 @@ export default connect(({ }) => {
   return {
     
   }
-})(login);
+})(users);
+
+

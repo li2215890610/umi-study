@@ -1,9 +1,31 @@
-import React from 'react';
-import Link from 'umi/link';
-import { Button } from "antd";
 
-export default () => (
-  <Link to={'/'}>
-    <Button>按钮</Button>
-  </Link>
-);
+import React from 'react';
+
+import styles from './index.css';
+
+class Index extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
+ 
+  render() {
+    return (
+      <div className={styles.normal}>
+        404
+      </div>
+    );
+  }
+}
+
+
+Index.propTypes = {
+};
+
+export default Index;
+
+
+
