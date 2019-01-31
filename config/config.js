@@ -7,7 +7,7 @@ const plugins = [
   ['umi-plugin-react', {
     antd: true,
     dva: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dva
-    title: 'FCT后台管理系统',
+    title: 'umi后台管理系统',
     dll: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll
     routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#antd
       exclude: [],

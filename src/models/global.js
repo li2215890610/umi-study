@@ -15,7 +15,7 @@ export default {
         console.log(pathname);
 
         if (pathname === '/') {
-          alert("/")
+          console.log("/global")
           return
         }
       });
