@@ -1,0 +1,6 @@
+.content{
+  margin: 10px 16px 0px 16px;
+  background: #fff; 
+  height:100vh;
+  overflow-y: scroll;
+}

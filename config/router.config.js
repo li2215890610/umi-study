@@ -1,33 +1,37 @@
 /**
  * 
  * 
- * component =====> 配置页面一切以src开始
+ * component =====> 配置页面一切以 src 目录开始
  */
 
 export default [
-  // app
-  {
-    path: '/',
-    component: '../layouts/index', //配置页面
-    Routes: ['src/routes/RootRoute'], // Routes  嵌套路由
-  },
-  // {
-  //   path:"/home",
-  //   component:"./home",
-  // },
-  {
-    path:"/users",
-    title: 'Users',
-    component:"./Users/Users", 
-  },
   {
     path:"/login",
     component:"./Login/Login",
   },
   {
-    path:"/index",
-    component:"./index",
+    path: '/',
+    Routes: [  // Routes   https://reacttraining.com/react-router/web/guides/static-routes 匹配路由挂在前
+      'src/routes/RootRoute'
+    ],
   },
+  {
+    path: '/home',
+    component: '../layouts/index', //配置页面
+    routes: [  // routes  嵌套路由子路由
+      { path: '/home', component: './Home/Home' },
+      { path: '/home/user', component: './Users/Users' },
+      { path: '/home/demo', component: './demo/demo' },
+      { path: '/home/index', component: './Index/Index' },
+      {
+        component: './404/404',
+      },
+    ],
+  },
+  // {
+  //   path:"/index",
+  //   component:"./Index/Index",
+  // },
   {
     component: './404/404',
   },

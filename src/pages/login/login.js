@@ -21,7 +21,7 @@ export default class Login extends React.Component {
   }
 
   loginReqClick = () => {
-    router.push('/index');
+    router.push('/home');
   };
 
   render() {

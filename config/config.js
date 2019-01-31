@@ -37,7 +37,6 @@ export default {
   //   'primary-color': "#202020",
   // },
   theme: theme,
-
   externals: { // 配置不打包进入dist的npm  https://umijs.org/zh/config/#externals
     // '@antv/data-set': 'DataSet',
   },

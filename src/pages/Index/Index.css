@@ -7,7 +7,7 @@
 
 .welcome {
   height: 328px;
-  background: url(../assets/yay.jpg) no-repeat center 0;
+  background: url("https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI6gOB8gpSiafJSMq9QsI2PrMBnwTvcx1rsptdCRIWmhMN0Vg1sdiae2LrSOqhs8qH3MlLXW7n8yYXw/132") no-repeat center 0;
   background-size: 388px 328px;
 }
 

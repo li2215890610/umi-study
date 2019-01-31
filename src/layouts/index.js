@@ -1,10 +1,28 @@
-import styles from './index.css';
+import Header from "./Header/Header";
 
-function BasicLayout() {
+import Footer from "./Footer/Footer";
+
+import SiderMenu from "./SiderMenu/SiderMenu";
+
+import Content from "./Content/Content";
+
+import { Layout } from 'antd';
+
+import styles from './index.css';
+    
+function BasicLayout(props) {
+  
   return (
-    <div className={styles.normal}>
-      dsds
-    </div>
+    <Layout>
+      <SiderMenu/>
+      <Layout>
+        <Header/>
+        <Content children={
+          props.children
+        }/>
+        <Footer/>
+      </Layout>
+    </Layout>
   );
 }
 
