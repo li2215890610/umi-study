@@ -91,30 +91,30 @@ class LoginForm extends React.Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <Form className={styles.login_form}>
-          <FormItem>
-              {getFieldDecorator('username', {
-                  initialValue: 'username',
-                  rules: [{ validator: this.checkUsername }]
-              })(
-                  <Input placeholder="用户名" />
-              )}
-          </FormItem>
-          <FormItem>
-              {getFieldDecorator('password', {
-                  initialValue: '123456',
-                  rules: [{ validator: this.checkPassword }]
-              })(
-                  <Input type="password" placeholder="密码" />
-              )}
-          </FormItem>
-          <FormItem>
-              <Button type="primary" onClick={this.loginSubmit} className={styles.login_form_button}>
-                  登录
-              </Button>
-          </FormItem>
-        </Form>
-      )
-    }
+        <FormItem>
+            {getFieldDecorator('username', {
+                initialValue: 'username',
+                rules: [{ validator: this.checkUsername }]
+            })(
+                <Input placeholder="用户名" />
+            )}
+        </FormItem>
+        <FormItem>
+            {getFieldDecorator('password', {
+                initialValue: '123456',
+                rules: [{ validator: this.checkPassword }]
+            })(
+                <Input type="password" placeholder="密码" />
+            )}
+        </FormItem>
+        <FormItem>
+            <Button type="primary" onClick={this.loginSubmit} className={styles.login_form_button}>
+                登录
+            </Button>
+        </FormItem>
+      </Form>
+    )
+  }
 }
 
 LoginForm = Form.create({})(LoginForm);
