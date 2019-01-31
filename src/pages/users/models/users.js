@@ -3,7 +3,7 @@
 export default {
   namespace: 'users', 
   state: { 
-    shop_logo: 'http://wx.qlogo.cn/mmopen/98Nz5LFElxzjUXYDtia8tTpU3fQGqB80BasKdDFVMKibwNnIib3ZMD9Km53YM58sMFCdHxB74aicFVibyM37ZAYibmpNpQyYiafeibzu/0',
+    shop_logo: 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI6gOB8gpSiafJSMq9QsI2PrMBnwTvcx1rsptdCRIWmhMN0Vg1sdiae2LrSOqhs8qH3MlLXW7n8yYXw/132',
   },
   effects: { 
     * getUsersList({ payload: data }, { put, call, select }) {
