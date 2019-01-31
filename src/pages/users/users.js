@@ -28,7 +28,7 @@ class users extends Component {
 
     return (
       <div>
-          
+          Users
       </div>
     );
   }

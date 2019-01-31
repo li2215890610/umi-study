@@ -1,7 +1,7 @@
 
 
 export default {
-  namespace: 'users', 
+  namespace: 'Users', 
   state: { 
     shop_logo: 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI6gOB8gpSiafJSMq9QsI2PrMBnwTvcx1rsptdCRIWmhMN0Vg1sdiae2LrSOqhs8qH3MlLXW7n8yYXw/132',
   },

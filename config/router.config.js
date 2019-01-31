@@ -17,8 +17,8 @@ export default [
   // },
   {
     path:"/users",
-    title: 'users',
-    component:"./users/users", 
+    title: 'Users',
+    component:"./Users/Users", 
   },
   {
     path:"/login",
