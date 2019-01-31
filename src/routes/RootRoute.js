@@ -1,6 +1,7 @@
 import React from 'react';
 import router from 'umi/router';
-import { Button } from 'antd';
+
+import PageLoading from "../components/PageLoading/index"
 
 class RootRoute extends React.Component{
 
@@ -11,8 +12,7 @@ class RootRoute extends React.Component{
   render (){
     return (
       <div>
-          cscdcdcd
-          <Button>sdsd</Button>
+          <PageLoading />
       </div>
     )
   }
