@@ -1,78 +1,120 @@
-import React, { Component} from 'react';
-import { connect } from 'dva';
-import Indexs from "@/components/indexs/indexs";
-import RenderDiscountList from "@/components/renderDiscountList/renderDiscountList";
+import React from 'react';
 
-import styles from './login.css';
+import styles from "./Login.css";
 
+import { Form, Input, Button } from 'antd'
 
-class login extends Component {
+import router from 'umi/router';
 
-  
+const FormItem = Form.Item;
+
+export default class Login extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
 
     }
   }
 
- 
-  render() {
+  componentDidMount() {//每次进入登录页清除之前的登录信息
 
+  }
+
+  loginReqClick = () => {
+    router.push('/index');
+  };
+
+  render() {
     return (
       <div>
-        <Indexs/>
-        <button onClick={this.onClicks.bind(this, 2)}>按钮</button>
-        Hello
-        <RenderDiscountList />
-
+        <div className={styles.login_header}>
+            <div className={styles.logo}>
+                <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="慕课后台管理系统" />
+                umi全家桶后台管理系统学习
+            </div>
+        </div>
+        <div className={styles.login_content_wrap}>
+            <div className={styles.login_content}>
+                <div className={styles.word}>低碳环保 <br />引领城市新经济发展</div>
+                <div className={styles.login_box}>
+                    <div className={styles.error_msg_wrap}>
+                        <div
+                            className={this.state.errorMsg ? "show" : ""}>
+                            {this.state.errorMsg}
+                        </div>
+                    </div>
+                    <div className={styles.title}>欢迎使用</div>
+                    <LoginForm ref="login" loginSubmit={this.loginReqClick} />
+                </div>
+            </div>
+        </div>
       </div>
-    );
+    )
   }
-
-
-  componentDidMount = ()=>{
-    console.log("加载了")
-  }
-
-  //在渲染前调用
-  componentWillMount() {
-    console.log('Component WILL MOUNT!')
-  }
-  //在第一次渲染后调用
-  componentDidMount() {
-    console.log('Component DID MOUNT!')
-  }
-  //在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。
-  componentWillReceiveProps(newProps) {
-    console.log('Component WILL RECEIVE PROPS!')
-  }
-  //返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。 可以在你确认不需要更新组件时使用。
-  shouldComponentUpdate(newProps, newState) {
-    return true;
-  }
-  //在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。
-  componentWillUpdate(nextProps, nextState) {
-    console.log('Component WILL UPDATE!');
-  }
-  // 在组件完成更新后立即调用。在初始化时不会被调用。
-  componentDidUpdate(prevProps, prevState) {
-    console.log('Component DID UPDATE!')
-  }
-  //在组件从 DOM 中移除的时候立刻被调用。
-  componentWillUnmount() {
-    console.log('Component WILL UNMOUNT!')
-  }
-  //绑定方法
-  onClicks = (e, num) => {
-    console.log(e, num);
-  }
-
 }
 
+class LoginForm extends React.Component {
 
-export default connect(({ }) => {
-  return {
-    
-  }
-})(login);
+  loginSubmit = (e) => {
+    e && e.preventDefault();
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        let formValue = this.props.form.getFieldsValue();
+        this.props.loginSubmit({
+            username: formValue.username,
+            password: formValue.password
+        });
+      }
+    });
+  };
+
+  checkUsername = (rule, value, callback) => {
+    let reg = /^\w+$/;
+    if (!value) {
+        callback('请输入用户名!');
+    } else if (!reg.test(value)) {
+        callback('用户名只允许输入英文字母');
+    } else {
+        callback();
+    }
+  };
+
+  checkPassword = (rule, value, callback) => {
+    if (!value) {
+        callback('请输入密码!');
+    } else {
+        callback();
+    }
+  };
+
+  render() {
+    const { getFieldDecorator } = this.props.form;
+    return (
+      <Form className={styles.login_form}>
+          <FormItem>
+              {getFieldDecorator('username', {
+                  initialValue: 'username',
+                  rules: [{ validator: this.checkUsername }]
+              })(
+                  <Input placeholder="用户名" />
+              )}
+          </FormItem>
+          <FormItem>
+              {getFieldDecorator('password', {
+                  initialValue: '123456',
+                  rules: [{ validator: this.checkPassword }]
+              })(
+                  <Input type="password" placeholder="密码" />
+              )}
+          </FormItem>
+          <FormItem>
+              <Button type="primary" onClick={this.loginSubmit} className={styles.login_form_button}>
+                  登录
+              </Button>
+          </FormItem>
+        </Form>
+      )
+    }
+}
+
+LoginForm = Form.create({})(LoginForm);

@@ -22,7 +22,7 @@ export default [
   },
   {
     path:"/login",
-    component:"./login/login",
+    component:"./Login/Login",
   },
   {
     path:"/index",
