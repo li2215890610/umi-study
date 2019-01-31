@@ -29,6 +29,6 @@ export default [
     component:"./index",
   },
   {
-    component: '404',
+    component: './404/404',
   },
 ];

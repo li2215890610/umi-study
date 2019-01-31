@@ -5,8 +5,7 @@ import PageLoading from "../components/PageLoading/index"
 
 class RootRoute extends React.Component{
 
-  componentDidMount = ()=>{
-    // debugger
+  componentWillMount = ()=>{
     router.push('/login');
   }
   render (){
