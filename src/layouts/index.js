@@ -1,5 +1,3 @@
-import withRouter from 'umi/withRouter';
-
 import Header from "./Header/Header";
 
 import Footer from "./Footer/Footer";
