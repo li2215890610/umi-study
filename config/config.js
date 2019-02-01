@@ -33,14 +33,18 @@ export default {
   routes: pageRoutes, // https://umijs.org/zh/guide/router.html#%E9%85%8D%E7%BD%AE%E5%BC%8F%E8%B7%AF%E7%94%B1
   // history: 'hash', // 配置hash路由 https://umijs.org/zh/config/#history
   // base:"", //https://umijs.org/zh/config/#base
+
+
   // theme: { // 定制UI // https://ant.design/docs/react/customize-theme-cn
   //   'primary-color': "#202020",
   // },
-  theme: theme,
+  theme: theme, //外部引入
+
+
   externals: { // 配置不打包进入dist的npm  https://umijs.org/zh/config/#externals
     // '@antv/data-set': 'DataSet',
   },
   ignoreMomentLocale: true, //忽略 moment 的 locale 文件，用于减少尺寸。 https://umijs.org/zh/config/#ignoremomentlocale
   disableRedirectHoist: true, //https://umijs.org/zh/config/#disableredirecthoist
-
+  exportStatic: true
 }
