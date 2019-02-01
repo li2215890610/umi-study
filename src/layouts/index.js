@@ -1,3 +1,5 @@
+import withRouter from 'umi/withRouter';
+
 import Header from "./Header/Header";
 
 import Footer from "./Footer/Footer";
@@ -7,8 +9,6 @@ import SiderMenu from "./SiderMenu/SiderMenu";
 import Content from "./Content/Content";
 
 import { Layout } from 'antd';
-
-import styles from './index.css';
     
 function BasicLayout(props) {
   
@@ -26,4 +26,6 @@ function BasicLayout(props) {
   );
 }
 
+
 export default BasicLayout;
+
