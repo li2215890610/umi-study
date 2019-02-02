@@ -1,6 +1,5 @@
 /**
  * 
- * 
  * component =====> 配置页面一切以 src 目录开始
  */
 
@@ -11,7 +10,7 @@ export default [
   },
   {
     path: '/',
-    Routes: [ // Routes  https://reacttraining.com/react-router/web/guides/static-routes 匹配路由挂在前
+    Routes: [ // Routes  https://reacttraining.com/react-router/web/guides/static-routes 
       'src/routes/RootRoute'
     ],
   },
@@ -82,7 +81,6 @@ export default [
       {
         component: './404/404',
       },
-
     ],
   },
   {
