@@ -3,14 +3,14 @@ import React from 'react';
 import { Button } from "antd";
 
 class LoadingButton extends React.Component {
-  
+
   state = {
-      loading: true,
-      btnFont:"关闭"
+    loading: true,
+    btnFont:"关闭"
   }
 
   handleCloseLoading = () => {    
-    let {loading} = this.state;
+    let { loading} = this.state;
     this.setState({
       btnFont: loading ? "打开":"关闭",
       loading: loading ? false:true

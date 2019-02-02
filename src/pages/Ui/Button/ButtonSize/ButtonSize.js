@@ -3,13 +3,10 @@ import React from 'react';
 import { Button, Radio } from "antd";
 
 class ButtonSize extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      size:'default'
-    }
-  }
 
+  state = {
+    size:'default'
+  }
 
   handleChange = (e) => {
     this.setState({

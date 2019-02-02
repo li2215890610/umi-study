@@ -22,7 +22,6 @@ class Loading extends React.Component{
         let { loading} = this.state;
         return (
             <div>
-
                 <Card title="Spin用法" className={styles.card}>
                     <Spin size="small"/>
                     <Spin style={{margin:'0 10px'}}/>

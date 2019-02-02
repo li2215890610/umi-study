@@ -12,7 +12,7 @@ import ButtonGroup from "../Button/ButtonGroup/ButtonGroup";
 
 import ButtonSize from "../Button/ButtonSize/ButtonSize";
 
-import styles from "../Ui.css";
+import styles from "./Button.css";
 
 class Button extends React.Component {
 
