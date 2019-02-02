@@ -21,32 +21,32 @@ const menuList = [
 },
   {
       "title": 'UI',
-      "key": '/',
+      "key": '/home/ui',
       "icon": 'appstore',
       "children": [
           {
               "title": '按钮',
-              "key": '/ui/buttons',
+              "key": '/home/ui/button',
           },
           {
               "title": '弹框',
-              "key": '/ui/modals',
+              "key": '/home/ui/modal',
           },
           {
               "title": 'Loading',
-              "key": '/ui/loadings',
+              "key": '/home/ui/loading',
           },
           {
               "title": '通知提醒',
-              "key": '/ui/notifications',
+              "key": '/home/ui/notification',
           },
           {
               "title": '全局Message',
-              "key": '/ui/messages',
+              "key": '/home/ui/message',
           },
           {
               "title": 'Tab页签',
-              "key": '/ui/tabs',
+              "key": '/home/ui/tab',
           }
       ]
   },

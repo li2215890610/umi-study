@@ -22,24 +22,57 @@ export default [
       { 
         path: '/home', 
         component: './Home/Home',    
-        title:'9999',    
+        title:'Home',    
       },
       { 
         path: '/home/user', 
         component: './Users/Users' ,
-        title:'9999',    
+        title:'Users',    
       },
       { 
         path: '/home/demo', 
-        component: './demo/demo' 
+        component: './demo/demo',
+        title:'demo',    
       },
       { 
         path: '/home/index', 
-        component: './Index/Index' 
+        component: './Index/Index',
+        title:'Index',    
+      },
+      {
+        path:"/home/ui",
+        component:'./Ui/Ui',
+        routes:[
+          {
+            path:'/home/ui/button',
+            component:'./Ui/Button/Button'
+          },
+          {
+            path:'/home/ui/modal',
+            component:'./Ui/Modal/Modal'
+          },
+          {
+            path:'/home/ui/loading',
+            component:'./Ui/Loading/Loading'
+          },
+          {
+            path:'/home/ui/notification',
+            component:'./Ui/Notification/Notification'
+          },
+          {
+            path:'/home/ui/message',
+            component:'./Ui/Message/Message'
+          },
+          {
+            path:'/home/ui/tab',
+            component:'./Ui/tab/tab'
+          },
+        ]
       },
       {
         component: './404/404',
       },
+      
     ],
   },
   // {
