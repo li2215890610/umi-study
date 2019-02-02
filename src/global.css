@@ -18,7 +18,6 @@ body {
 :global(body .ant-layout-sider) {
   background: #ffffff !important;
 }
-
 :global(body .ant-menu .ant-menu-item) {
   margin-top: 0 !important;
 }
