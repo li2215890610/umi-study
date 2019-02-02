@@ -19,10 +19,24 @@ export default [
     path: '/home',
     component: '../layouts/index', //配置页面
     routes: [  // routes  嵌套路由子路由
-      { path: '/home', component: './Home/Home' },
-      { path: '/home/user', component: './Users/Users' },
-      { path: '/home/demo', component: './demo/demo' },
-      { path: '/home/index', component: './Index/Index' },
+      { 
+        path: '/home', 
+        component: './Home/Home',    
+        title:'9999',    
+      },
+      { 
+        path: '/home/user', 
+        component: './Users/Users' ,
+        title:'9999',    
+      },
+      { 
+        path: '/home/demo', 
+        component: './demo/demo' 
+      },
+      { 
+        path: '/home/index', 
+        component: './Index/Index' 
+      },
       {
         component: './404/404',
       },

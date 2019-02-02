@@ -7,7 +7,9 @@ const plugins = [
   ['umi-plugin-react', {
     antd: true,
     dva: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dva
-    title: 'umi后台管理系统',
+    title: {
+      defaultTitle:"umi后台管理系统"
+    },
     dll: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll
     routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#antd
       exclude: [],
@@ -23,7 +25,6 @@ const plugins = [
       loadingComponent: './components/PageLoading/index',
     },
     // dynamicImport:  false, // 关闭按需加载
-
   }],
 ]
 
@@ -46,5 +47,5 @@ export default {
   },
   ignoreMomentLocale: true, //忽略 moment 的 locale 文件，用于减少尺寸。 https://umijs.org/zh/config/#ignoremomentlocale
   disableRedirectHoist: true, //https://umijs.org/zh/config/#disableredirecthoist
-  exportStatic: true
+  // exportStatic: true, //https://umijs.org/zh/config/#exportstatic
 }
