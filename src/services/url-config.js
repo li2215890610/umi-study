@@ -5,5 +5,4 @@ export default {
   login:{
     logon:`${base_url}/login`
   },
-  
 }
