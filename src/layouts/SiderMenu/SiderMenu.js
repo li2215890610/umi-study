@@ -102,7 +102,7 @@ class SiderMenu extends React.Component {
   render() {
 
     let { collapsed, current, openKeys} = this.state;
-    
+
     let theme = 'inline' // dark;
 
     return (

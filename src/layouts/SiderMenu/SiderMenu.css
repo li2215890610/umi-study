@@ -1,8 +1,7 @@
 .nav_left{
-  /* background: #011429; */  
   background: #fff;
   overflow: auto;
-  height: calc(100vh),
+  /* height: calc(100vh), */
 }
 .nav_left_top{
   height: 64px;
