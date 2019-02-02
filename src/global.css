@@ -7,8 +7,6 @@ body {
   margin: 0;
 }
 
-
-
 :global( body .ant-layout-header) {
   background: #ffffff;
   border-bottom: 1px solid #efefef;
@@ -20,6 +18,7 @@ body {
 :global(body .ant-layout-sider) {
   background: #ffffff !important;
 }
+
 :global(body .ant-menu .ant-menu-item) {
   margin-top: 0 !important;
 }
