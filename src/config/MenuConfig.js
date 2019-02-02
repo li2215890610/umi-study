@@ -13,7 +13,6 @@ const menuList = [{
     icon: 'flag',
     key: '/home/dynamic_form'
 },
-
 {
     title: 'UI',
     key: '/home/ui',
@@ -46,15 +45,15 @@ const menuList = [{
 },
 {
     title: '表单',
-    key: '/form',
+    key: '/home/form',
     icon: 'form',
     children: [{
             title: '登录',
-            key: '/form/login',
+            key: '/home/form/login',
         },
         {
             title: '注册',
-            key: '/form/reg',
+            key: '/home/form/reg',
         }
     ]
 },

@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import { connect } from 'dva';
-import Indexs from "@/components/indexs/indexs";
 import RenderDiscountList from "@/components/RenderDiscountList/RenderDiscountList";
 
 class demo extends Component {
@@ -18,7 +17,6 @@ class demo extends Component {
 
     return (
       <div>
-        <Indexs/>
         <button onClick={this.onClicks.bind(this, 2)}>按钮</button>
         Hello
         <RenderDiscountList />

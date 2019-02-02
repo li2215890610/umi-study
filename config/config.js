@@ -48,4 +48,5 @@ export default {
   ignoreMomentLocale: true, //忽略 moment 的 locale 文件，用于减少尺寸。 https://umijs.org/zh/config/#ignoremomentlocale
   disableRedirectHoist: true, //https://umijs.org/zh/config/#disableredirecthoist
   // exportStatic: true, //https://umijs.org/zh/config/#exportstatic
+
 }

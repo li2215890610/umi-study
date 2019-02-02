@@ -64,6 +64,23 @@ export default [
           },
         ]
       },
+      { 
+        path: '/home/form', 
+        component: './Form/Form',
+        title:'form',   
+        routes: [
+          {
+          title: '登录',
+          path: '/home/form/login',
+          component:"./Form/Login/Login",
+          },
+          {
+            title: '注册',
+            path: '/home/form/reg',
+            component:"./Form/Register/Register",
+          }
+        ]
+      },
       {
         component: './404/404',
       },
