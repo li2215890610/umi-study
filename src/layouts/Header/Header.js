@@ -43,7 +43,7 @@ class Headers extends React.Component {
       <Header>
         <Row>
           <Col span='24' className={styles.header_top}>
-            <div className={styles.header_Go_Out}>
+            <div className={styles.header_go_out}>
               <span>欢迎～{userName}</span>
               <a onClick={this.loginOrd}>退出</a>
             </div>
