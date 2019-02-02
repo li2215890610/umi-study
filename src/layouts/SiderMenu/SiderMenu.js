@@ -21,7 +21,6 @@ class SiderMenu extends React.Component {
       openKeys: [],
       current:""
     };
-    
   }
 
   componentDidMount = ()=>{ 
