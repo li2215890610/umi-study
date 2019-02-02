@@ -12,13 +12,15 @@ function BasicLayout(props) {
   
   return (
     <Layout>
-      <SiderMenu/>
+      <Header/>
       <Layout>
-        <Header/>
-        <Content children={
-          props.children
-        }/>
-        <Footer/>
+        <SiderMenu/>
+        <Layout>
+          <Content children={
+            props.children
+          }/>
+          <Footer/>
+        </Layout>
       </Layout>
     </Layout>
   );

@@ -30,14 +30,9 @@ export default [
         title:'Users',    
       },
       { 
-        path: '/home/demo', 
-        component: './demo/demo',
-        title:'demo',    
-      },
-      { 
-        path: '/home/index', 
-        component: './Index/Index',
-        title:'Index',    
+        path: '/home/dynamic_form', 
+        component: './DynamicForm/DynamicForm',
+        title:'动态表单',    
       },
       {
         path:"/home/ui",

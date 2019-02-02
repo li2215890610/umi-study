@@ -1,4 +1,7 @@
-
-.normal {
-  background: #AA79F2;
+.home_warp{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 69px);
 }

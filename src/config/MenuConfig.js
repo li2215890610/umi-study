@@ -6,19 +6,15 @@ const menuList = [
   },
   {
     "title": 'user',
-    "icon": 'flag',
+    "icon": 'user',
     "key": '/home/user'
 },
 {
-    "title": 'demo',
+    "title": '动态表单',
     "icon": 'flag',
-    "key": '/home/demo'
+    "key": '/home/dynamic_form'
 },
-{
-    "title": 'index',
-    "icon": 'flag',
-    "key": '/home/index'
-},
+
   {
       "title": 'UI',
       "key": '/home/ui',

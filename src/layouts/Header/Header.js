@@ -10,11 +10,9 @@ const { Header } = Layout;
 
 
 class Headers extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      
-    }
+
+  state = {
+    
   }
 
   componentDidMount = ()=>{    

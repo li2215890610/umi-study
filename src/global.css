@@ -6,3 +6,26 @@ html, body, #root {
 body {
   margin: 0;
 }
+
+
+
+:global( body .ant-layout-header) {
+  background: #ffffff;
+  border-bottom: 1px solid #efefef;
+}
+
+/**
+*  menu  覆盖样式
+*/
+:global(body .ant-menu .ant-menu-item) {
+  margin-top: 0 !important;
+}
+
+:global(body .ant-menu-inline .ant-menu-item:after), 
+:global(body .ant-menu-vertical .ant-menu-item:after){
+  right: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-right: 5px solid #FFC400;
+}
