@@ -2,7 +2,7 @@ import React from "react";
 
 import { Form, InputNumber, Icon, Button, Row, Col } from 'antd';
 
-import styles from "./renderDiscountList.css";
+import styles from "./RenderDiscountList.css";
 
 const FormItem = Form.Item;
 
