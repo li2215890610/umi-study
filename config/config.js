@@ -22,7 +22,7 @@ const plugins = [
     },
     dynamicImport: { // 开启按需加载路由 https://umijs.org/zh/plugin/umi-plugin-react.html#dynamicimport
       webpackChunkName: true, // 开启按需加载
-      loadingComponent: './components/PageLoading/index',
+      loadingComponent: './components/PageLoading/index', // 切换路由loading
     },
     // dynamicImport:  false, // 关闭按需加载
   }],
