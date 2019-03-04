@@ -44,6 +44,7 @@ class SiderMenu extends React.Component {
 
   onOpenChange = (openKeys) => {
     const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+    // debugger
     if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
       this.setState({ openKeys });
     } else {
@@ -54,6 +55,7 @@ class SiderMenu extends React.Component {
   }
 
   handleClick = ({ item, key }) => {
+    console.log("item, keyitem, key",item, key)
     this.renderPathname(key,(data)=>{
       this.setState({
         current: data.menu,
@@ -118,11 +120,11 @@ class SiderMenu extends React.Component {
           <Menu
             mode="inline"  // 菜单样式
             theme={theme} //定义主题颜色
-            defaultOpenKeys={['/table']} // 默认展开的 一级菜单项
-            defaultSelectedKeys={['/table/basic']}  //默认选中的二级菜单项
+            defaultOpenKeys={['/home']} // 默认展开的 一级菜单项
+            // defaultSelectedKeys={['/home/ui/button']}  //默认选中的二级菜单项
             selectedKeys={[current]} //默认选中
             onClick={this.handleClick} //点击 MenuItem 调用此函数
-            openKeys={openKeys} //当前展开的 SubMenu 菜单项 key 数组	st
+            openKeys={openKeys} //当前展开的 SubMenu 菜单项 key 数组
             onOpenChange={this.onOpenChange}  //SubMenu 展开/关闭的回调
             inlineCollapsed={collapsed} //菜单收起状态 Boolrn
           >
@@ -140,22 +142,22 @@ class SiderMenu extends React.Component {
     if (data.search(`/form/`) !== -1) {
       cb({
         menu: data,
-        openKeys: [`/form`]
+        openKeys: [`/home/form`]
       })
     }else  if (data.search(`/order/`) !== -1) {
       cb({
         menu: data,
-        openKeys: [`/order`]
+        openKeys: [`/home/order`]
       })
     }else if (data.search(`/table/`) !== -1) {
       cb({
         menu: data,
-        openKeys: [`/table`]
+        openKeys: [`/home/table`]
       })
     }else if (data.search(`/ui/`) !== -1) {
       cb({
         menu: data,
-        openKeys: [`/ui`]
+        openKeys: [`/home/ui`]
       })
     }else{
       cb({
