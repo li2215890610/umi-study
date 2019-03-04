@@ -18,29 +18,29 @@ const menuList = [{
     key: '/home/ui',
     icon: 'appstore',
     children: [{
-            title: '按钮',
-            key: '/home/ui/button',
-        },
-        {
-            title: '弹框',
-            key: '/home/ui/modal',
-        },
-        {
-            title: 'Loading',
-            key: '/home/ui/loading',
-        },
-        {
-            title: '通知提醒',
-            key: '/home/ui/notification',
-        },
-        {
-            title: '全局Message',
-            key: '/home/ui/message',
-        },
-        {
-            title: 'Tab页签',
-            key: '/home/ui/tab',
-        }
+        title: '按钮',
+        key: '/home/ui/button',
+    },
+    {
+        title: '弹框',
+        key: '/home/ui/modal',
+    },
+    {
+        title: 'Loading',
+        key: '/home/ui/loading',
+    },
+    {
+        title: '通知提醒',
+        key: '/home/ui/notification',
+    },
+    {
+        title: '全局Message',
+        key: '/home/ui/message',
+    },
+    {
+        title: 'Tab页签',
+        key: '/home/ui/tab',
+    }
     ]
 },
 {
@@ -48,13 +48,13 @@ const menuList = [{
     key: '/home/form',
     icon: 'form',
     children: [{
-            title: '登录',
-            key: '/home/form/login',
-        },
-        {
-            title: '注册',
-            key: '/home/form/reg',
-        }
+        title: '登录',
+        key: '/home/form/login',
+    },
+    {
+        title: '注册',
+        key: '/home/form/reg',
+    }
     ]
 },
 {
@@ -62,13 +62,13 @@ const menuList = [{
     key: '/table',
     icon: 'table',
     children: [{
-            title: '综合表格',
-            key: '/table/basic',
-        },
-        {
-            title: '动态表格',
-            key: '/table/dynamic',
-        }
+        title: '综合表格',
+        key: '/table/basic',
+    },
+    {
+        title: '动态表格',
+        key: '/table/dynamic',
+    }
     ]
 },
 {
