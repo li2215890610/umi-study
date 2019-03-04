@@ -4,14 +4,14 @@ import { Button, message } from 'antd'
 
 class Errors extends React.Component {
 
-    showMessage = ()=>{
+    showMessage = () => {
         message.error("error");
     }
 
-    render(){
+    render() {
         return (
             <div>
-              <Button type="danger" onClick={this.showMessage}>error</Button>
+                <Button type="danger" onClick={this.showMessage}>error</Button>
             </div>
         );
     }

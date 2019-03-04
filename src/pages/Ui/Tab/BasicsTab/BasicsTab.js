@@ -16,7 +16,7 @@ class BasicsTab extends React.Component {
 
   changeCallback = (value) => {
     console.log(value);
-    
+
     // Messages("success",`这是点击了第${value}个模版`,2)
   }
 
@@ -25,13 +25,13 @@ class BasicsTab extends React.Component {
       <div>
         <Tabs defaultActiveKey="1" onChange={this.changeCallback}>
           <TabPane tab="Tab 1" key="1">
-            <Successs/>
+            <Successs />
           </TabPane>
           <TabPane tab="Tab 2" disabled key="2">
-            <ErrorNotification/>
+            <ErrorNotification />
           </TabPane>
           <TabPane tab="Tab 3" key="3">
-            <Loading/>
+            <Loading />
           </TabPane>
         </Tabs>
       </div>

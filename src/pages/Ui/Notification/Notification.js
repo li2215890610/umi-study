@@ -18,7 +18,7 @@ import styles from "./Notification.css";
 
 class Notification extends React.Component {
 
-  notificationMessage = ()=>{
+  notificationMessage = () => {
     // notificationMessage('error',{
 
     // },()=>{
@@ -31,21 +31,21 @@ class Notification extends React.Component {
         <Card title='通知提醒框 (Notification)' className={styles.card}>
           <Row>
             <Col span='4'>
-              <SuccessNotification/>            
+              <SuccessNotification />
             </Col>
             <Col span='4'>
-              <ErrorNotification/>            
+              <ErrorNotification />
             </Col>
             <Col span='4'>
-              <InfoNotification/>            
+              <InfoNotification />
             </Col>
             <Col span='4'>
-              <WarningNotification/>            
+              <WarningNotification />
             </Col>
             <Col span='4'>
-              <Button type="primary" onClick={this.notificationMessage}>自定义封装</Button>            
+              <Button type="primary" onClick={this.notificationMessage}>自定义封装</Button>
             </Col>
-            
+
           </Row>
         </Card>
       </div>
@@ -53,4 +53,4 @@ class Notification extends React.Component {
   }
 }
 
-export default  Notification ;
+export default Notification;

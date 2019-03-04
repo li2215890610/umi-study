@@ -4,22 +4,22 @@ import { Button, Modal } from "antd";
 
 class Warning extends React.Component {
 
-  onOk = () =>{
+  onOk = () => {
     console.log('ok');
-    
+
   }
 
-  onCancel = () =>{
+  onCancel = () => {
     console.log('Cancel');
   }
 
-  handleWarning = ()=>{
+  handleWarning = () => {
     let _this = this;
     Modal.warning({
-      content:"这是Warning内容",
-      okText:"确定",
-      title:"确认取消吗?",
-      onOk(){
+      content: "这是Warning内容",
+      okText: "确定",
+      title: "确认取消吗?",
+      onOk() {
         _this.onOk()
       }
     })

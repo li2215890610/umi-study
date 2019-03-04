@@ -14,14 +14,14 @@ class Modal extends React.Component {
     return (
       <div>
         <Card title='基础模态框' className={styles.card}>
-          <BasicsModal/>
+          <BasicsModal />
         </Card>
         <Card title='信息确认框' className={styles.card}>
-          <InformationConfirmModal/>
+          <InformationConfirmModal />
         </Card>
       </div>
     );
   }
 }
 
-export default  Modal ;
+export default Modal;

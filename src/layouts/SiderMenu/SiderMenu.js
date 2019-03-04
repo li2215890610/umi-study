@@ -2,7 +2,7 @@ import React from "react";
 
 import { Menu, Icon, Button, Layout } from 'antd';
 
-import { NavLink} from 'dva/router';
+import { NavLink } from 'dva/router';
 
 import menuConfig from "../../config/MenuConfig.js";
 
@@ -19,14 +19,14 @@ class SiderMenu extends React.Component {
     this.state = {
       collapsed: false,
       openKeys: [],
-      current:""
+      current: ""
     };
   }
 
-  componentDidMount = ()=>{ 
+  componentDidMount = () => {
 
     console.log(window.location.pathname)
-    this.renderPathname(window.location.pathname,(data)=>{
+    this.renderPathname(window.location.pathname, (data) => {
       this.setState({
         current: data.menu,
         openKeys: data.openKeys
@@ -34,7 +34,7 @@ class SiderMenu extends React.Component {
     })
   }
 
-  rootSubmenuKeys = ['/home', '/ui', '/form','/table','/rich','/city','/order','/user','/charts','/permission']
+  rootSubmenuKeys = ['/home', '/ui', '/form', '/table', '/rich', '/city', '/order', '/user', '/charts', '/permission']
 
   toggleCollapsed = () => {
     this.setState({
@@ -55,8 +55,8 @@ class SiderMenu extends React.Component {
   }
 
   handleClick = ({ item, key }) => {
-    console.log("item, keyitem, key",item, key)
-    this.renderPathname(key,(data)=>{
+    console.log("item, keyitem, key", item, key)
+    this.renderPathname(key, (data) => {
       this.setState({
         current: data.menu,
       })
@@ -68,7 +68,7 @@ class SiderMenu extends React.Component {
       dataSource.map((menu, index) => {
         if (menu.children) {
           return (
-            <SubMenu key={menu.key} 
+            <SubMenu key={menu.key}
               title={
                 <span>
                   <Icon type={menu.icon} />
@@ -83,26 +83,26 @@ class SiderMenu extends React.Component {
           )
         } else {
           return (<Menu.Item title={menu.title} key={menu.key}>{
-              <NavLink className={styles.link_font_color} to={menu.key}>
+            <NavLink className={styles.link_font_color} to={menu.key}>
+              <span>
+                {
+                  menu.icon ? <Icon type={menu.icon} /> : ''
+                }
                 <span>
-                  {
-                    menu.icon ? <Icon type={menu.icon} /> : ''
-                  }
-                  <span>
-                    {menu.title}
-                  </span>
+                  {menu.title}
                 </span>
-              </NavLink>
+              </span>
+            </NavLink>
           }</Menu.Item>)
         }
       })
     )
   }
 
-  
+
   render() {
 
-    let { collapsed, current, openKeys} = this.state;
+    let { collapsed, current, openKeys } = this.state;
 
     let theme = 'inline' // dark;
 
@@ -131,38 +131,38 @@ class SiderMenu extends React.Component {
             {this.renderMenu(menuConfig)}
           </Menu>
 
-        </Sider>      
+        </Sider>
       </div>
     );
   }
 
 
-  renderPathname = ( data,cb) =>{
+  renderPathname = (data, cb) => {
 
     if (data.search(`/form/`) !== -1) {
       cb({
         menu: data,
         openKeys: [`/home/form`]
       })
-    }else  if (data.search(`/order/`) !== -1) {
+    } else if (data.search(`/order/`) !== -1) {
       cb({
         menu: data,
         openKeys: [`/home/order`]
       })
-    }else if (data.search(`/table/`) !== -1) {
+    } else if (data.search(`/table/`) !== -1) {
       cb({
         menu: data,
         openKeys: [`/home/table`]
       })
-    }else if (data.search(`/ui/`) !== -1) {
+    } else if (data.search(`/ui/`) !== -1) {
       cb({
         menu: data,
         openKeys: [`/home/ui`]
       })
-    }else{
+    } else {
       cb({
         menu: data,
-        openKeys:[]
+        openKeys: []
       })
     }
   }

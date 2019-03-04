@@ -1,10 +1,10 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'dva';
 import RenderDiscountList from "@/components/RenderDiscountList/RenderDiscountList";
 
 class demo extends Component {
 
-  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ class demo extends Component {
     }
   }
 
- 
+
   render() {
 
     return (
@@ -26,7 +26,7 @@ class demo extends Component {
   }
 
 
-  componentDidMount = ()=>{
+  componentDidMount = () => {
     console.log("加载了")
   }
 
@@ -68,6 +68,6 @@ class demo extends Component {
 
 export default connect(({ }) => {
   return {
-    
+
   }
 })(demo);

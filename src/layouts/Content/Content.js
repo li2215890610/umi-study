@@ -6,7 +6,7 @@ import styles from "./Content.css";
 
 const { Content } = Layout
 
-function  RenderContent (props){
+function RenderContent(props) {
   return (
     <Content className={styles.content} >
       {props.children}

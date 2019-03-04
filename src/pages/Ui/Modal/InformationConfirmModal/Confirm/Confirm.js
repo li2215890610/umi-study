@@ -4,26 +4,26 @@ import { Button, Modal } from "antd";
 
 class Confirm extends React.Component {
 
-  onOk = () =>{
+  onOk = () => {
     console.log('ok');
-    
+
   }
 
-  onCancel = () =>{
+  onCancel = () => {
     console.log('Cancel');
   }
 
-  handleConfirm = ()=>{
+  handleConfirm = () => {
     let _this = this;
     Modal.confirm({
-      cancelText:"取消",
-      content:"这是Confirm内容",
-      okText:"确定",
-      title:"确认取消吗?",
-      onOk(){
+      cancelText: "取消",
+      content: "这是Confirm内容",
+      okText: "确定",
+      title: "确认取消吗?",
+      onOk() {
         _this.onOk()
       },
-      onCancel(){
+      onCancel() {
         _this.onCancel()
       }
     })

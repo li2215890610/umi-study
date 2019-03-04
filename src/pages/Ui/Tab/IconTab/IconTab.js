@@ -13,26 +13,26 @@ import { Tabs, Icon, Radio } from "antd";
 const TabPane = Tabs.TabPane;
 
 class IconTab extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      size:"small"
+      size: "small"
     }
   }
   changeCallback = (value) => {
     console.log(value);
-    
+
     // Messages("success",`这是点击了第${value}个模版`,2)
   }
 
-  onChange = (e) =>{
+  onChange = (e) => {
     this.setState({ size: e.target.value });
 
   }
 
   render() {
 
-    let { size} = this.state;
+    let { size } = this.state;
 
     let Tab1 = <span><Icon type="apple" />Tab 1</span>
     let Tab2 = <span><Icon type="android" />Tab 2</span>
@@ -48,13 +48,13 @@ class IconTab extends React.Component {
 
         <Tabs defaultActiveKey="1" size={size} onChange={this.changeCallback}>
           <TabPane tab={Tab1} key="1">
-            <Success/>
+            <Success />
           </TabPane>
-          <TabPane tab={Tab2}  key="2">
-            <ErrorNotification/>
+          <TabPane tab={Tab2} key="2">
+            <ErrorNotification />
           </TabPane>
           <TabPane tab={Tab3} key="3">
-            <Loading/>
+            <Loading />
           </TabPane>
         </Tabs>
       </div>

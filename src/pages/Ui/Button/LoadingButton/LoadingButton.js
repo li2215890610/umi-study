@@ -6,14 +6,14 @@ class LoadingButton extends React.Component {
 
   state = {
     loading: true,
-    btnFont:"关闭"
+    btnFont: "关闭"
   }
 
-  handleCloseLoading = () => {    
-    let { loading} = this.state;
+  handleCloseLoading = () => {
+    let { loading } = this.state;
     this.setState({
-      btnFont: loading ? "打开":"关闭",
-      loading: loading ? false:true
+      btnFont: loading ? "打开" : "关闭",
+      loading: loading ? false : true
     });
   }
 

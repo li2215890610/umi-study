@@ -18,7 +18,7 @@ import styles from "./Message.css";
 
 class Message extends React.Component {
 
-  onMessages = () =>{
+  onMessages = () => {
     // Messages('loading','通知',5)
   }
 
@@ -28,19 +28,19 @@ class Message extends React.Component {
         <Card title='通知提醒框 (message)' className={styles.card}>
           <Row>
             <Col span='4'>
-              <Success/>            
+              <Success />
             </Col>
             <Col span='4'>
-              <Error/>            
+              <Error />
             </Col>
             <Col span='4'>
-              <Info/>            
+              <Info />
             </Col>
             <Col span='4'>
-              <Warning/>            
+              <Warning />
             </Col>
             <Col span='4'>
-              <Button type="primary" onClick={this.onMessages}>自定义封装</Button>            
+              <Button type="primary" onClick={this.onMessages}>自定义封装</Button>
             </Col>
           </Row>
         </Card>
@@ -49,4 +49,4 @@ class Message extends React.Component {
   }
 }
 
-export default  Message ;
+export default Message;

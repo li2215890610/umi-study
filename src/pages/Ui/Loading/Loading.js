@@ -1,32 +1,32 @@
 import React from 'react'
 
-import { Card, Spin, Icon, Alert, Switch} from  'antd';
+import { Card, Spin, Icon, Alert, Switch } from 'antd';
 
 import styles from "./Loading.css";
 
-class Loading extends React.Component{
-    constructor(props){
-      super(props)
-      this.state = {
-        loading:false
-      }
+class Loading extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading: false
+        }
     }
     toggle = (value) => {
-      this.setState({ loading: value });
+        this.setState({ loading: value });
     }
 
-    render(){
+    render() {
 
-        const icon = <Icon  type="loading" style={{fontSize:24}}/>
+        const icon = <Icon type="loading" style={{ fontSize: 24 }} />
         const iconLoading = <Icon type="loading" style={{ fontSize: 24 }} />
-        let { loading} = this.state;
+        let { loading } = this.state;
         return (
             <div>
                 <Card title="Spin用法" className={styles.card}>
-                    <Spin size="small"/>
-                    <Spin style={{margin:'0 10px'}}/>
-                    <Spin size="large"/>
-                    <Spin indicator={icon} style={{ marginLeft: 10 }} spinning={true}/>
+                    <Spin size="small" />
+                    <Spin style={{ margin: '0 10px' }} />
+                    <Spin size="large" />
+                    <Spin indicator={icon} style={{ marginLeft: 10 }} spinning={true} />
                 </Card>
                 <Card title="控制" className={styles.card}>
                     Loading state：<Switch checked={loading} onChange={this.toggle} />

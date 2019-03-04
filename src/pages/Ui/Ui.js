@@ -1,8 +1,8 @@
-export default function(props) {
+export default function (props) {
   console.log(props)
   return (
     <div>
-       {props.children}
+      {props.children}
     </div>
   );
 }

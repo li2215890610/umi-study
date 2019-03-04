@@ -8,23 +8,23 @@ import LevelFrom from "./LevelFrom/LevelFrom";
 
 import "../Form.less";
 
-class Login extends React.Component{
+class Login extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
 
-    }    
+    }
   }
 
-  render (){
-    return(
+  render() {
+    return (
       <div>
-          <Card title="内联表单" className="card">
-            <InlineFrom/>
-          </Card>
-          <Card title="水平表单" className="card">
-            <LevelFrom/>
-          </Card>
+        <Card title="内联表单" className="card">
+          <InlineFrom />
+        </Card>
+        <Card title="水平表单" className="card">
+          <LevelFrom />
+        </Card>
       </div>
     )
   }

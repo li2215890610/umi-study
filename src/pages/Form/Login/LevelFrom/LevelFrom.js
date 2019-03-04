@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Form, Input, Button, Icon, Checkbox} from "antd";
+import { Form, Input, Button, Icon, Checkbox } from "antd";
 
 // import { Messages} from "utils/MessageUtlis";
 
@@ -15,14 +15,14 @@ class LevelFrom extends React.Component {
   }
 
   handleSubmit = (e) => {
-   e.preventDefault();
-   let userInfo =  this.props.form.getFieldsValue();
-   console.log(userInfo);
-   this.props.form.validateFields((err,data)=>{
-    if (!err) {
-      // Messages('success',`${userInfo.userName},恭喜你通过验证,当前密码为${userInfo.userPwd}`,2)
-    }
-   })
+    e.preventDefault();
+    let userInfo = this.props.form.getFieldsValue();
+    console.log(userInfo);
+    this.props.form.validateFields((err, data) => {
+      if (!err) {
+        // Messages('success',`${userInfo.userName},恭喜你通过验证,当前密码为${userInfo.userPwd}`,2)
+      }
+    })
     return
   }
   render() {
@@ -42,7 +42,7 @@ class LevelFrom extends React.Component {
                   }
                 ]
               })(
-                <Input prefix={<Icon type="user"/>} style={{width:'300px'}} placeholder="请输入用户名" />
+                <Input prefix={<Icon type="user" />} style={{ width: '300px' }} placeholder="请输入用户名" />
               )
             }
           </FormItem>
@@ -56,14 +56,14 @@ class LevelFrom extends React.Component {
                     message: "账号为必填项",
                   },
                   {
-                    min:2,
-                    max:4,
-                    message:"最小长度2,最大长度4"
+                    min: 2,
+                    max: 4,
+                    message: "最小长度2,最大长度4"
                   }
                 ]
 
               })(
-                <Input prefix={<Icon type="lock"/>} style={{width:'300px'}} placeholder="请输入账号" />
+                <Input prefix={<Icon type="lock" />} style={{ width: '300px' }} placeholder="请输入账号" />
               )
             }
           </FormItem>

@@ -4,14 +4,14 @@ import { Button, message } from 'antd'
 
 class Success extends React.Component {
 
-    showMessage = ()=>{
+    showMessage = () => {
         message.success("Success");
     }
 
-    render(){
+    render() {
         return (
             <div>
-              <Button  onClick={this.showMessage}>Success</Button>
+                <Button onClick={this.showMessage}>Success</Button>
             </div>
         );
     }

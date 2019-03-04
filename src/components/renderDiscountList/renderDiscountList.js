@@ -41,7 +41,7 @@ class MyC extends React.Component {
     this.props.onChange([...this.props.value]);
   }
 
-  renderRow = ( rowData, index, array) => {
+  renderRow = (rowData, index, array) => {
 
     return (
       <Row key={rowData.key} type="flex" justify="start" align="middle" className={styles.card_box}>
@@ -136,7 +136,7 @@ class renderDiscountList extends React.Component {
     });
   }
 
-  pushDiscountList = ()=>{
+  pushDiscountList = () => {
     const { rawData } = this.state;
     rawData.push({
       discount: 1,
@@ -147,12 +147,12 @@ class renderDiscountList extends React.Component {
     })
   }
 
-  removeDiscountList = ( key)=>{
+  removeDiscountList = (key) => {
     const { rawData } = this.state;
 
-    rawData.map((item, index)=>{
+    rawData.map((item, index) => {
       if (item.key === key) {
-        return rawData.splice(index,1)
+        return rawData.splice(index, 1)
       }
     })
     this.setState({
@@ -176,7 +176,7 @@ class renderDiscountList extends React.Component {
       {getFieldDecorator('youhui', {
         initialValue: rawData,
       })(
-        <MyC pushDiscountList={this.pushDiscountList} removeDiscountList={this.removeDiscountList}/>
+        <MyC pushDiscountList={this.pushDiscountList} removeDiscountList={this.removeDiscountList} />
       )}
     </FormItem>;
 

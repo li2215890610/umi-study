@@ -83,7 +83,7 @@ class CustomDynamicAddTab extends React.Component {
         <div style={{ marginBottom: 16 }}>
           <Button onClick={this.add}>添加标签页</Button>
         </div>
-        <Row style={{width:'500px'}}>
+        <Row style={{ width: '500px' }}>
           <Tabs
             hideAdd
             number='100'

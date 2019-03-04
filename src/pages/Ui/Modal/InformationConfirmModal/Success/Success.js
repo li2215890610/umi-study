@@ -4,22 +4,22 @@ import { Button, Modal } from "antd";
 
 class Success extends React.Component {
 
-  onOk = () =>{
+  onOk = () => {
     console.log('ok');
   }
 
-  onCancel = () =>{
+  onCancel = () => {
     console.log('Cancel');
   }
 
-  handleSuccess = ()=>{
+  handleSuccess = () => {
     let _this = this;
     Modal.success({
-      content:"这是Success内容",
-      okText:"确定",
-      title:"确认取消吗?",
-      maskClosable:true,
-      onOk(){
+      content: "这是Success内容",
+      okText: "确定",
+      title: "确认取消吗?",
+      maskClosable: true,
+      onOk() {
         _this.onOk()
       }
     })

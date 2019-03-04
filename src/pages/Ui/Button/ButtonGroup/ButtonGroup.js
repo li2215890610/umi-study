@@ -8,7 +8,7 @@ class IconButton extends React.Component {
     return (
       <div className='card-wrap'>
         <Button.Group>
-          <Button type="primary" icon="left" style={{marginRight:0}}>返回</Button>
+          <Button type="primary" icon="left" style={{ marginRight: 0 }}>返回</Button>
           <Button type="primary" icon="right">前进</Button>
         </Button.Group>
       </div>

@@ -21,23 +21,23 @@ class Button extends React.Component {
     return (
       <div>
         <Card title='基础按钮' className={styles.card}>
-          <BasicsButton/>
+          <BasicsButton />
         </Card>
         <Card title='Icon按钮' className={styles.card}>
-          <IconButton/>
+          <IconButton />
         </Card>
         <Card title='Loading按钮' className={styles.card}>
-          <LoadingButton/>
+          <LoadingButton />
         </Card>
         <Card title='按钮组' className={styles.card}>
-          <ButtonGroup/>
+          <ButtonGroup />
         </Card>
         <Card title='按钮尺寸' className={styles.card}>
-          <ButtonSize/>
+          <ButtonSize />
         </Card>
       </div>
     );
   }
 }
 
-export default  Button ;
+export default Button;

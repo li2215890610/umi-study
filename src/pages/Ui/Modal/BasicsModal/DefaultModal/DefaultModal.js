@@ -8,14 +8,14 @@ class DefaultModal extends React.Component {
     modals: false
   }
 
-  handleOpen = (e,data) => {
-    console.log(e,data);
+  handleOpen = (e, data) => {
+    console.log(e, data);
     this.setState({
       modals: true
     })
   }
 
-  handleCancel = () =>{
+  handleCancel = () => {
     this.setState({
       modals: false
     })
@@ -25,11 +25,11 @@ class DefaultModal extends React.Component {
     let { modals } = this.state;
     return (
       <div>
-        <Button type="primary" onClick={this.handleOpen.bind(this,'222')}>基础弹窗</Button>
+        <Button type="primary" onClick={this.handleOpen.bind(this, '222')}>基础弹窗</Button>
         <Modal
           title="基础弹窗"
           visible={modals}
-          style={{top:'100px'}}
+          style={{ top: '100px' }}
           cancelText="取消"
           okText="确定"
           onOk={this.handleCancel}

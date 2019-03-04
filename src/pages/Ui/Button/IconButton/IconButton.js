@@ -7,15 +7,15 @@ class IconButton extends React.Component {
   render() {
     return (
       <div className='card-wrap'>
-          <Button icon="plus">创建</Button>
-          <Button icon="edit">编辑</Button>
-          <Button icon="delete">删除</Button>
-          <Button shape="circle" icon="search"></Button>
-          <Button type="primary" icon="search">搜索</Button>
-          <Button type="primary" icon="download">下载</Button>
+        <Button icon="plus">创建</Button>
+        <Button icon="edit">编辑</Button>
+        <Button icon="delete">删除</Button>
+        <Button shape="circle" icon="search"></Button>
+        <Button type="primary" icon="search">搜索</Button>
+        <Button type="primary" icon="download">下载</Button>
       </div>
     );
   }
 }
 
-export default  IconButton ;
+export default IconButton;

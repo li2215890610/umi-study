@@ -5,7 +5,7 @@ import { Button, Radio } from "antd";
 class ButtonSize extends React.Component {
 
   state = {
-    size:'default'
+    size: 'default'
   }
 
   handleChange = (e) => {

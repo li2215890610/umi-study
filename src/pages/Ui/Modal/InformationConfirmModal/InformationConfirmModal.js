@@ -31,7 +31,7 @@ class InformationConfirmModal extends React.Component {
             <Success />
           </Col>
         </Row>
-        <Row style={{marginTop:'20px'}}>
+        <Row style={{ marginTop: '20px' }}>
           <Col span='6'>
             <Info />
           </Col>

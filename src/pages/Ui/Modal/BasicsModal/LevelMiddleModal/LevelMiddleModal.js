@@ -13,14 +13,14 @@ class LevelMiddleModal extends React.Component {
     }
   }
 
-  handleOpen = (e,data) => {
-    console.log(e,data);
+  handleOpen = (e, data) => {
+    console.log(e, data);
     this.setState({
       modals: true
     })
   }
 
-  handleCancel = () =>{
+  handleCancel = () => {
     this.setState({
       modals: false
     })
@@ -30,7 +30,7 @@ class LevelMiddleModal extends React.Component {
     let { modals } = this.state;
     return (
       <div>
-        <Button type="primary" onClick={this.handleOpen.bind(this,'222')}>modals居中</Button>
+        <Button type="primary" onClick={this.handleOpen.bind(this, '222')}>modals居中</Button>
         <Modal
           title="modals居中"
           visible={modals}

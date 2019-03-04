@@ -17,21 +17,21 @@ class Tab extends React.Component {
       <div>
         <Card title='Tab页签' className={styles.card}>
           <Row>
-            <BasicsTab/>
+            <BasicsTab />
           </Row>
         </Card>
         <Card title='Icon-Tab页签' className={styles.card}>
           <Row>
-            <IconTab/>
+            <IconTab />
           </Row>
         </Card>
         <Card title='自定义Tab页签' className={styles.card}>
-          <CustomDynamicAddTab/>
+          <CustomDynamicAddTab />
         </Card>
-        
+
       </div>
     );
   }
 }
 
-export default  Tab ;
+export default Tab;

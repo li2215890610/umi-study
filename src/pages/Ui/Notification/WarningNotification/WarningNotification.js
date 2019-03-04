@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { Button,notification } from "antd";
+import { Button, notification } from "antd";
 
 class WarningNotification extends React.Component {
 
-  onClick = () =>{
+  onClick = () => {
     notification.warning({
-      message:"工资提醒",
-      placement:'topRight',
-      description:"上月考勤20天,迟到2天,实发工资250",
-      key:"SuccessNotification",
-      onClose(){
+      message: "工资提醒",
+      placement: 'topRight',
+      description: "上月考勤20天,迟到2天,实发工资250",
+      key: "SuccessNotification",
+      onClose() {
         console.log('222');
-        
+
       }
     })
   }
@@ -26,4 +26,4 @@ class WarningNotification extends React.Component {
   }
 }
 
-export default  WarningNotification ;
+export default WarningNotification;

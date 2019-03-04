@@ -7,19 +7,19 @@ import SiderMenu from "./SiderMenu/SiderMenu";
 import Content from "./Content/Content";
 
 import { Layout } from 'antd';
-    
+
 function BasicLayout(props) {
-  
+
   return (
     <Layout>
-      <Header/>
+      <Header />
       <Layout>
-        <SiderMenu/>
+        <SiderMenu />
         <Layout>
           <Content children={
             props.children
-          }/>
-          <Footer/>
+          } />
+          <Footer />
         </Layout>
       </Layout>
     </Layout>

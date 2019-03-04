@@ -8,38 +8,37 @@ import router from 'umi/router';
 
 const { Header } = Layout;
 
-
 class Headers extends React.Component {
 
   state = {
-    
+
   }
 
-  componentDidMount = ()=>{    
+  componentDidMount = () => {
     this.setState({
-      userName:"Hello world"
+      userName: "Hello world"
     })
   }
 
-  loginOrd = ()=>{
+  loginOrd = () => {
     Modal.confirm({
-      cancelText:"取消",
-      content:"这是Confirm内容",
-      okText:"确定",
-      title:"确认取消吗?",
-      onOk(){
+      cancelText: "取消",
+      content: "这是Confirm内容",
+      okText: "确定",
+      title: "确认取消吗?",
+      onOk() {
         router.push('/login');
       },
-      onCancel(){
-        
+      onCancel() {
+
       }
     })
   }
 
-  render(){
+  render() {
 
-    let { userName} = this.state;
-    
+    let { userName } = this.state;
+
     return (
       <Header>
         <Row>

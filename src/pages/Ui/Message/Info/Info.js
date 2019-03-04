@@ -4,14 +4,14 @@ import { Button, message } from 'antd'
 
 class info extends React.Component {
 
-    showMessage = ()=>{
+    showMessage = () => {
         message.info("info");
     }
 
-    render(){
+    render() {
         return (
             <div>
-              <Button type="dashed" onClick={this.showMessage}>info</Button>
+                <Button type="dashed" onClick={this.showMessage}>info</Button>
             </div>
         );
     }
