@@ -8,12 +8,12 @@ const plugins = [
     antd: true,
     dva: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dva
     title: {
-      defaultTitle:"umi后台管理系统"
+      defaultTitle: "umi后台管理系统"
     },
     dll: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll
     routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#antd
       exclude: [],
-    }, 
+    },
     hardSource: false, //https://umijs.org/zh/plugin/umi-plugin-react.html#hardsource
     locale: { //https://umijs.org/zh/plugin/umi-plugin-react.html#locale
       enable: true, // default false

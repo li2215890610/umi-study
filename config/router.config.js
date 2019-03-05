@@ -37,29 +37,29 @@ export default [
         path: "/home/ui",
         component: './Ui/Ui',
         routes: [{
-            path: '/home/ui/button',
-            component: './Ui/Button/Button'
-          },
-          {
-            path: '/home/ui/modal',
-            component: './Ui/Modal/Modal'
-          },
-          {
-            path: '/home/ui/loading',
-            component: './Ui/Loading/Loading'
-          },
-          {
-            path: '/home/ui/notification',
-            component: './Ui/Notification/Notification'
-          },
-          {
-            path: '/home/ui/message',
-            component: './Ui/Message/Message'
-          },
-          {
-            path: '/home/ui/tab',
-            component: './Ui/tab/tab'
-          },
+          path: '/home/ui/button',
+          component: './Ui/Button/Button'
+        },
+        {
+          path: '/home/ui/modal',
+          component: './Ui/Modal/Modal'
+        },
+        {
+          path: '/home/ui/loading',
+          component: './Ui/Loading/Loading'
+        },
+        {
+          path: '/home/ui/notification',
+          component: './Ui/Notification/Notification'
+        },
+        {
+          path: '/home/ui/message',
+          component: './Ui/Message/Message'
+        },
+        {
+          path: '/home/ui/tab',
+          component: './Ui/tab/tab'
+        },
         ]
       },
       {
@@ -67,15 +67,15 @@ export default [
         component: './Form/Form',
         title: 'form',
         routes: [{
-            title: '登录',
-            path: '/home/form/login',
-            component: "./Form/Login/Login",
-          },
-          {
-            title: '注册',
-            path: '/home/form/reg',
-            component: "./Form/Register/Register",
-          }
+          title: '登录',
+          path: '/home/form/login',
+          component: "./Form/Login/Login",
+        },
+        {
+          title: '注册',
+          path: '/home/form/reg',
+          component: "./Form/Register/Register",
+        }
         ]
       },
       {
