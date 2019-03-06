@@ -11,30 +11,3 @@ body {
   background: #ffffff;
   border-bottom: 1px solid #efefef;
 }
-
-/**
-*  menu  覆盖样式
-*/
-
-:global(body .ant-layout-sider) {
-  background: #ffffff !important;
-}
-:global(body .ant-menu .ant-menu-item) {
-  margin-top: 0 !important;
-}
-
-:global(body .ant-menu-inline .ant-menu-item:after), 
-:global(body .ant-menu-vertical .ant-menu-item:after){  
-  right: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  border-right: 5px solid #FFC400;
-}
-
-/**
-* 覆盖 menu闭合之后鼠标引动右侧出现选择栏的宽度
-*/
-:global(body .ant-menu-submenu-popup, ){
-  width: 120px;
-}
