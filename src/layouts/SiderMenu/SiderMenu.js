@@ -107,7 +107,7 @@ class SiderMenu extends React.Component {
     let theme = 'inline' // dark;
 
     return (
-      <div className={styles.nav_left}>
+      <div className={`nav_left ${styles.nav_left}`}>
         <div className={styles.nav_left_top}>
           <Button type="primary" onClick={this.toggleCollapsed}>
             <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
