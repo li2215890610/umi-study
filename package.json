@@ -28,5 +28,8 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "react-router-breadcrumbs-hoc": "^2.3.2"
   }
 }
