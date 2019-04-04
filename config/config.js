@@ -51,7 +51,13 @@ export default {
     // '@antv/data-set': 'DataSet',
   },
   ignoreMomentLocale: true, //忽略 moment 的 locale 文件，用于减少尺寸。 https://umijs.org/zh/config/#ignoremomentlocale
-  disableRedirectHoist: true, //https://umijs.org/zh/config/#disableredirecthoist
   // exportStatic: true, //https://umijs.org/zh/config/#exportstatic
-
+  alias: {
+    '@services': path.resolve(__dirname,'..', "src/services"),
+    '@utils': path.resolve(__dirname,'..', "src/utils"),
+    '@components': path.resolve(__dirname,'..', "src/components"),
+  },
+  targets: { //https://umijs.org/zh/config/#targets
+    ie: 11,
+  },
 }
