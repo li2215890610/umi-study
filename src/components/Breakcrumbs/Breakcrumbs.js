@@ -17,10 +17,8 @@ export default withBreadcrumbs(routes)(({ breadcrumbs }) => {
 
   let newBreadcrumbs = [...breadcrumbs];
 
-  delete newBreadcrumbs[0]
-  delete newBreadcrumbs[1]
+  newBreadcrumbs.splice(0,2)
 
-  console.log(newBreadcrumbs)
   return (
     <div className={styles['breakcrumb_box']}>
       {newBreadcrumbs.map((breadcrumb, index) => (
