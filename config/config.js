@@ -2,6 +2,8 @@ import pageRoutes from "./router.config";
 
 import theme from "./theme";
 
+const path = require('path')
+
 const plugins = [
   // ref: https://umijs.org/plugin/umi-plugin-react.html
   ['umi-plugin-react', {

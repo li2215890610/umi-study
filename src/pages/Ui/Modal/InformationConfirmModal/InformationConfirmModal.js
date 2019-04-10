@@ -18,21 +18,21 @@ class InformationConfirmModal extends React.Component {
     return (
       <div>
         <Row>
-          <Col span='6'>
+          <Col span={6}>
             <Confirm />
           </Col>
-          <Col span='6'>
+          <Col span={6}>
             <Warning />
           </Col>
-          <Col span='6'>
+          <Col span={6}>
             <Error />
           </Col>
-          <Col span='6'>
+          <Col span={6}>
             <Success />
           </Col>
         </Row>
         <Row style={{ marginTop: '20px' }}>
-          <Col span='6'>
+          <Col span={6}>
             <Info />
           </Col>
         </Row>
