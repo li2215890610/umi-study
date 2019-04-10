@@ -4,7 +4,7 @@ import withBreadcrumbs from 'react-router-breadcrumbs-hoc';
 
 import  {routerBreakcrumbList} from "../../config/routerConfig";
 
-import styles from "./Breakcrumbs.less";
+import styles from "./Breakcrumbs.css";
 
 
 // 更多配置请移步 https://github.com/icd2k3/react-router-breadcrumbs-hoc
