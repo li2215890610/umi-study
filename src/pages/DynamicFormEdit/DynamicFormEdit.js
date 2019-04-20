@@ -17,9 +17,9 @@ import {
 
 import { ProductSpecifications } from "./Components/index";
 
-import styles from './RestaurantProductEdit.css';
+import styles from './DynamicFormEdit.css';
 
-class RestaurantProductEdit extends Component {
+class DynamicFormEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,13 +30,13 @@ class RestaurantProductEdit extends Component {
   componentDidMount = () => {
 
     this.props.dispatch({
-      type: "RestaurantProductEdit/getMainCategoryList",
+      type: "DynamicFormEdit/getMainCategoryList",
       payload: {}
     })
 
     if (this.props.location && this.props.location.query && this.props.location.query.product_id) {
       this.props.dispatch({
-        type: "RestaurantProductEdit/getRestaurantProductDetail",
+        type: "DynamicFormEdit/getRestaurantProductDetail",
         payload: {
           dish_id: this.props.location.query.product_id
         }
@@ -99,14 +99,14 @@ class RestaurantProductEdit extends Component {
 }
 
 
-// export default RestaurantProductEdit;
-// export default Form.create()(RestaurantProductEdit)
+// export default DynamicFormEdit;
+// export default Form.create()(DynamicFormEdit)
 
 
-export default connect(({ RestaurantProductEdit }) => {
+export default connect(({ DynamicFormEdit }) => {
   return {
-    main_category_list: RestaurantProductEdit.main_category_list,
-    productDetail: RestaurantProductEdit.productDetail
+    main_category_list: DynamicFormEdit.main_category_list,
+    productDetail: DynamicFormEdit.productDetail
   }
-})(Form.create()(RestaurantProductEdit));
+})(Form.create()(DynamicFormEdit));
 

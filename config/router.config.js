@@ -30,7 +30,7 @@ export default [
       },
       {
         path: '/home/dynamic_form',
-        component: './DynamicForm/DynamicForm',
+        component: './DynamicFormEdit/DynamicFormEdit',
         title: '动态表单',
       },
       {

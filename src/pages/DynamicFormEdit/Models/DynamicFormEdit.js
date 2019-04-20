@@ -1,7 +1,7 @@
 import { getRestaurantProductDetail, getMainCategoryList } from "../Services/index";
 
 export default {
-  namespace: 'RestaurantProductEdit',
+  namespace: 'DynamicFormEdit',
   state: {
     productDetail: {
       // name:"",
