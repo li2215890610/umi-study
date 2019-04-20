@@ -1,3 +1,7 @@
+import withRouter from 'umi/withRouter';
+
+import { connect} from "dva";
+
 import Header from "./Header/Header";
 
 import Footer from "./Footer/Footer";
@@ -5,6 +9,8 @@ import Footer from "./Footer/Footer";
 import SiderMenu from "./SiderMenu/SiderMenu";
 
 import Content from "./Content/Content";
+
+import Breakcrumbs from "../components/Breakcrumbs/Breakcrumbs";
 
 import { Layout } from 'antd';
 
@@ -16,6 +22,7 @@ function BasicLayout(props) {
       <Layout>
         <SiderMenu />
         <Layout>
+          <Breakcrumbs />
           <Content children={
             props.children
           } />
@@ -26,6 +33,11 @@ function BasicLayout(props) {
   );
 }
 
+export default withRouter(connect(()=>{
+  return {
+    
+  }
+})(BasicLayout));
 
-export default BasicLayout;
+// export default BasicLayout;
 

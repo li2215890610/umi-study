@@ -163,7 +163,6 @@ class renderDiscountList extends React.Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { rawData } = this.state;
-    console.log(rawData);
 
     const formItemLayoutWithOutLabel = {
       wrapperCol: {

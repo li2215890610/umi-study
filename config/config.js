@@ -12,7 +12,7 @@ const plugins = [
     dva: true, //https://umijs.org/zh/plugin/umi-plugin-react.html#dva
     
     title: {
-      defaultTitle:"umi后台管理系统"
+      defaultTitle: "umi后台管理系统"
     },
     
     dll: {
@@ -77,7 +77,6 @@ export default {
     '@utils': path.resolve(__dirname,'..', "src/utils"),
     '@components': path.resolve(__dirname,'..', "src/components"),
   },
-
   targets: { //https://umijs.org/zh/config/#targets
     ie: 11,
   },

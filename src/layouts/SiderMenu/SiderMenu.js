@@ -25,7 +25,6 @@ class SiderMenu extends React.Component {
 
   componentDidMount = () => {
 
-    console.log(window.location.pathname)
     this.renderPathname(window.location.pathname, (data) => {
       this.setState({
         current: data.menu,
@@ -34,7 +33,8 @@ class SiderMenu extends React.Component {
     })
   }
 
-  rootSubmenuKeys = ['/home', '/ui', '/form', '/table', '/rich', '/city', '/order', '/user', '/charts', '/permission']
+  // src/config/MenuConfig.js menuList里面第一层key
+  rootSubmenuKeys = ['/home','/home/user','/home/dynamic_form','/home/ui', '/home/form', '/table', '/city', '/order', '/user','/permission']
 
   toggleCollapsed = () => {
     this.setState({
@@ -43,8 +43,9 @@ class SiderMenu extends React.Component {
   }
 
   onOpenChange = (openKeys) => {
+    
     const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-    // debugger
+    
     if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
       this.setState({ openKeys });
     } else {
@@ -107,7 +108,7 @@ class SiderMenu extends React.Component {
     let theme = 'inline' // dark;
 
     return (
-      <div className={styles.nav_left}>
+      <div className={`nav_left ${styles.nav_left}`}>
         <div className={styles.nav_left_top}>
           <Button type="primary" onClick={this.toggleCollapsed}>
             <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
@@ -121,7 +122,6 @@ class SiderMenu extends React.Component {
             mode="inline"  // 菜单样式
             theme={theme} //定义主题颜色
             defaultOpenKeys={['/home']} // 默认展开的 一级菜单项
-            // defaultSelectedKeys={['/home/ui/button']}  //默认选中的二级菜单项
             selectedKeys={[current]} //默认选中
             onClick={this.handleClick} //点击 MenuItem 调用此函数
             openKeys={openKeys} //当前展开的 SubMenu 菜单项 key 数组

@@ -12,10 +12,10 @@ class BasicsModal extends React.Component {
     return (
       <div>
         <Row>
-          <Col span='6'>
+          <Col span={6}>
             <DefaultModal />
           </Col>
-          <Col span='6'>
+          <Col span={6}>
             <LevelMiddleModal />
           </Col>
         </Row>

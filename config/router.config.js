@@ -3,8 +3,7 @@
  * component =====> 配置页面一切以 src 目录开始
  */
 
-export default [
-  {
+export default [{
     path: "/login",
     component: "./Login/Login",
   },

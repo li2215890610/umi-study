@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from 'antd'
-import styles from './404.less'
+import styles from './404.css'
 
 const Error = () => (
   <div className={styles.error}>

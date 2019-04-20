@@ -35,7 +35,6 @@ class BasicsTest extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
 
   }
 
@@ -125,9 +124,6 @@ class BasicsTest extends React.Component {
   handleChangeBirthday = (date, dateString) => {
     this.setState({
       birthday: moment(dateString)
-    }, () => {
-      // console.log(this.state.birthday)
-      // console.log(dateString)
     })
   }
 

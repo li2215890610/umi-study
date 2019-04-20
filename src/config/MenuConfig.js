@@ -94,11 +94,6 @@ const menuList = [{
     title: '权限设置',
     icon: 'codepen',
     key: '/permission'
-},
-{
-    title: "生命周期",
-    icon: "radius-setting",
-    key: "/component",
 }
 ];
 
