@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import { connect } from 'dva';
+
 import RenderDiscountList from "@/components/RenderDiscountList/RenderDiscountList";
 
 class demo extends Component {
