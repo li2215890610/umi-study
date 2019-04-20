@@ -57,19 +57,19 @@ class DynamicFormEdit extends Component {
     return (
       <Form {...formTailLayout} onSubmit={this.handleSubmit}>
         <Card bordered={false} title="基本信息（灰色底不可修改）">
-          <SelectProductMainCategory initialValue={productDetail.types} form={this.props.form} disabled={true} optionalAllValue={main_category_list} />
+          <SelectProductMainCategory initialValue={productDetail.types} form={this.props.form}  optionalAllValue={main_category_list} />
 
-          <ProductName initialValue={productDetail.store_dish && productDetail.store_dish.name} form={this.props.form} disabled={true} />
+          <ProductName initialValue={productDetail.store_dish && productDetail.store_dish.name} form={this.props.form}  />
 
-          <ProductDesc initialValue={productDetail.store_dish && productDetail.store_dish.description} form={this.props.form} disabled={true} />
+          <ProductDesc initialValue={productDetail.store_dish && productDetail.store_dish.description} form={this.props.form}  />
 
-          <UploadImgList imgRequired={true} disabled={true} labelFont="商品图片" labelkey="image_urls" initialValue={productDetail.store_dish && productDetail.store_dish.image_urls} form={this.props.form} />
+          <UploadImgList imgRequired={true}  labelFont="商品图片" labelkey="image_urls" initialValue={productDetail.store_dish && productDetail.store_dish.image_urls} form={this.props.form} />
         </Card>
         <Card bordered={false} title="售卖信息">
 
-          <ProductSpecifications initialValue={productDetail.store_dish && productDetail.store_dish.sku} form={this.props.form} disabled={true} />
+          <ProductSpecifications initialValue={productDetail.store_dish && productDetail.store_dish.sku} form={this.props.form}  />
 
-          <ProductAttribute initialValue={productDetail.store_dish && productDetail.store_dish.attribute} form={this.props.form} disabled={true} />
+          <ProductAttribute initialValue={productDetail.store_dish && productDetail.store_dish.attribute} form={this.props.form}  />
 
         </Card>
         <Card bordered={false}>
