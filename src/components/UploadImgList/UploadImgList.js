@@ -143,7 +143,6 @@ export default class PicturesWall extends React.Component {
 
 	render() {
 		// console.log(this.props.disabled);
-
 		return (
 			this.renderFormItem(
 				this.renderUpload()
