@@ -28,9 +28,9 @@ export default [{
         title: 'Users',
       },
       {
-        path: '/home/dynamic_form',
-        component: './DynamicFormEdit/DynamicFormEdit',
-        title: '动态表单',
+        path: '/home/product_edit',
+        component: './ProductEdit/ProductEdit',
+        title: '商品编辑',
       },
       {
         path: "/home/ui",

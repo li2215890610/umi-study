@@ -34,7 +34,7 @@ class SiderMenu extends React.Component {
   }
 
   // src/config/MenuConfig.js menuList里面第一层key
-  rootSubmenuKeys = ['/home','/home/user','/home/dynamic_form','/home/ui', '/home/form', '/table', '/city', '/order', '/user','/permission']
+  rootSubmenuKeys = ['/home','/home/user','/home/product_edit','/home/ui', '/home/form', '/table', '/city', '/order', '/user','/permission']
 
   toggleCollapsed = () => {
     this.setState({

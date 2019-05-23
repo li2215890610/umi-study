@@ -14,13 +14,13 @@ import {
   ProductDesc,
   ProductAttribute,
   ProductSpecificationsADD
-} from "@components/ProductEditForm/index";
+} from "@components/ProductEditForm";
 
 import { ProductSpecifications } from "./Components/index";
 
-import styles from './DynamicFormEdit.css';
+import styles from './ProductEdit.css';
 
-class DynamicFormEdit extends Component {
+class ProductEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,13 +31,13 @@ class DynamicFormEdit extends Component {
   componentDidMount = () => {
 
     this.props.dispatch({
-      type: "DynamicFormEdit/getMainCategoryList",
+      type: "ProductEdit/getMainCategoryList",
       payload: {}
     })
 
     if (this.props.location && this.props.location.query && this.props.location.query.product_id) {
       this.props.dispatch({
-        type: "DynamicFormEdit/getRestaurantProductDetail",
+        type: "ProductEdit/getRestaurantProductDetail",
         payload: {
           dish_id: this.props.location.query.product_id
         }
@@ -106,14 +106,14 @@ class DynamicFormEdit extends Component {
 }
 
 
-// export default DynamicFormEdit;
-// export default Form.create()(DynamicFormEdit)
+// export default ProductEdit;
+// export default Form.create()(ProductEdit)
 
 
-export default connect(({ DynamicFormEdit }) => {
+export default connect(({ ProductEdit }) => {
   return {
-    main_category_list: DynamicFormEdit.main_category_list,
-    productDetail: DynamicFormEdit.productDetail
+    main_category_list: ProductEdit.main_category_list,
+    productDetail: ProductEdit.productDetail
   }
-})(Form.create()(DynamicFormEdit));
+})(Form.create()(ProductEdit));
 

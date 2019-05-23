@@ -11,7 +11,7 @@ export const routerBreakcrumbList = [{
     breadcrumb: 'Users',
   },
   {
-    path: '/home/dynamic_form',
+    path: '/home/product_edit',
     component: './DynamicForm/DynamicForm',
     title: '动态表单',
     breadcrumb: '动态表单',

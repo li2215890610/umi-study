@@ -11,7 +11,7 @@ const menuList = [{
 {
     title: '动态表单',
     icon: 'flag',
-    key: '/home/dynamic_form'
+    key: '/home/product_edit'
 },
 {
     title: 'UI',
