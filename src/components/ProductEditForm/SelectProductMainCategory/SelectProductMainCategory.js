@@ -25,8 +25,7 @@ export default ({ form, initialValue, disabled = false, optionalAllValue }) => {
           <TreeSelect
             multiple
             allowClear
-            treeDefaultExpandAll
-            treeCheckable={true}
+            treeDefaultExpandAll={true}
             disabled={disabled}
             showCheckedStrategy={SHOW_PARENT}
             style={{ width: 300 }}

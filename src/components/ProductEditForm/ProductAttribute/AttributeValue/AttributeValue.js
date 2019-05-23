@@ -20,7 +20,7 @@ export default class AttributeValue extends React.Component {
     this.props.onChange(id, { [field]: value });
   }
 
-  itemHandleChange = (id, {name})=>{
+  itemHandleChange = (id, {name_jp})=>{
 
     let { value, id:rowItemId} = this.props.values;
 
@@ -32,7 +32,7 @@ export default class AttributeValue extends React.Component {
     
       const idx = newValue.indexOf(attribute);
 
-      newValue[idx] = {...newValue[idx],name:name};
+      newValue[idx] = {...newValue[idx],name_jp:name_jp};
 
       this.props.onChange(rowItemId, { value:[
         ...newValue
@@ -67,7 +67,7 @@ export default class AttributeValue extends React.Component {
     const newValue = [...value];
         
     newValue.push({ 
-      name:"",id: genId.next().value,
+      name_jp:"",id: genId.next().value,
     });
 
     this.props.onChange(rowItemId,{
@@ -98,7 +98,7 @@ export default class AttributeValue extends React.Component {
           <Col span={5}>
             <Row>
               <Col span={24} >
-                <Input disabled={disabled} style={{ width: 74 }} placeholder="如:辣度" value={rowData.name} onChange={(event) => this.handleChange(rowData.id, 'name', event.target.value)} />
+                <Input disabled={disabled} style={{ width: 74 }} placeholder="如:辣度" value={rowData.name_jp} onChange={(event) => this.handleChange(rowData.id, 'name_jp', event.target.value)} />
               </Col>
             </Row>
           </Col>

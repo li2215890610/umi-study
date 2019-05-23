@@ -60,18 +60,21 @@ class DynamicFormEdit extends Component {
         <Card bordered={false} title="基本信息（灰色底不可修改）">
           <SelectProductMainCategory initialValue={productDetail.types} form={this.props.form} optionalAllValue={main_category_list} />
 
-          <ProductName initialValue={productDetail.store_dish && productDetail.store_dish.name} form={this.props.form} />
+          <ProductName initialValue={productDetail.name_jp} form={this.props.form} />
 
-          <ProductDesc initialValue={productDetail.store_dish && productDetail.store_dish.description} form={this.props.form} />
+          <ProductDesc initialValue={productDetail.description_jp} form={this.props.form} />
 
-          <UploadImgList imgRequired={true} labelFont="商品图片" labelkey="image_urls" initialValue={productDetail.store_dish && productDetail.store_dish.image_urls} form={this.props.form} />
+          <UploadImgList disabled={false} imgRequired={false} labelFont="商品图片" labelkey="image_urls" initialValue={productDetail.image_urls} form={this.props.form} />
+
         </Card>
 
         <Card bordered={false} title="售卖信息">
-          <ProductSpecificationsADD initialValue={[]} form={this.props.form} />
-          <ProductSpecifications initialValue={productDetail.store_dish && productDetail.store_dish.sku} form={this.props.form} />
 
-          <ProductAttribute initialValue={productDetail.store_dish && productDetail.store_dish.attribute} form={this.props.form} />
+          <ProductSpecificationsADD initialValue={[]} form={this.props.form} />
+
+          {/* <ProductSpecifications initialValue={[{}]} form={this.props.form} disabled={true} /> */}
+
+          <ProductAttribute initialValue={productDetail.store_dish && productDetail.store_dish.attribute ? productDetail.store_dish.attribute : []} form={this.props.form} />
 
         </Card>
 
@@ -83,7 +86,7 @@ class DynamicFormEdit extends Component {
             <Button className='cancel_btn'>取消</Button>
           </Link>
         </Card>
-        
+
       </Form>
     )
   }

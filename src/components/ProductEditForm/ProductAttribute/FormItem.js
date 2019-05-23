@@ -9,10 +9,10 @@ const FormItem = Form.Item;
 export default ({ form, initialValue, disabled = false }) => {
 
     return (
-        <FormItem label="商品名称">
+        <FormItem label="商品属性">
             {
                 form.getFieldDecorator('attribute', {
-                    initialValue: initialValue ? initialValue:[],
+                    initialValue: initialValue,
                 })(
                     <ProductAttribute max={10} disabled={disabled} />
                 )

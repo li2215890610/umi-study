@@ -9,7 +9,7 @@ export default ({ form, initialValue, disabled = false }) => {
   return (
     <FormItem label="商品描述">
       {
-        form.getFieldDecorator('description', {
+        form.getFieldDecorator('description_jp', {
           initialValue: initialValue,
         })(
           <TextArea placeholder="请输入商品描述" className='product__create--input' disabled={disabled}/>

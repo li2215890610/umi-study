@@ -7,7 +7,7 @@ export default ({ form, initialValue, disabled = false }) => {
   return (
     <FormItem label="商品名称">
       {
-        form.getFieldDecorator('name', {
+        form.getFieldDecorator('name_jp', {
           initialValue: initialValue,
           rules: [{
             required: true,

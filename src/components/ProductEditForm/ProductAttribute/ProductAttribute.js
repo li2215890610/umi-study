@@ -54,7 +54,7 @@ class ProductAttribute extends React.Component {
   }
 
   handleAttributeAdd = () => {
-    const newSubValue = [{ name:"",id:1}, { name:"",id:2}, { name:"",id:3}, { name:"",id:4}, { name:"",id:5} , { name:"",id:6}, { name:"",id:7}, { name:"",id:8}]
+    const newSubValue = [{ name_jp:"",id:1}, { name_jp:"",id:2}, { name_jp:"",id:3}, { name_jp:"",id:4}, { name_jp:"",id:5} , { name_jp:"",id:6}, { name_jp:"",id:7}, { name_jp:"",id:8}]
     
     const newValue = [...this.props.value, {id: genId.next().value, value:newSubValue},];
 
@@ -91,7 +91,7 @@ class ProductAttribute extends React.Component {
 
   renderAddBtn() {
     let { disabled, value, max} = this.props;
-    
+        
     return (
       <div>
         {
@@ -102,7 +102,7 @@ class ProductAttribute extends React.Component {
               onClick={this.handleAttributeAdd}
               className={styles['add_specifications--btn']}
           >
-            添加规格
+            添加属性
           </Button>
         }
 
@@ -138,7 +138,7 @@ class ProductAttribute extends React.Component {
    * 
    * [{
    *    id: 123,
-   *    sku_name: 1,
+   *    name_jp: 1,
    *    price: 1,
    *    component: 10
    * }]

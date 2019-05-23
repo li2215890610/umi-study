@@ -24,7 +24,7 @@ export default class ItemInput extends React.Component {
       {rowData.map((item, index)=>{
         return (
           <div key={index}  className={styles['item__input']}>
-            <Input disabled={disabled} className={styles['input']}  value={item.name} onChange={(event) => this.handleChange(item.id, 'name', event.target.value)} />
+            <Input disabled={disabled} className={styles['input']}  value={item.name_jp} onChange={(event) => this.handleChange(item.id, 'name_jp', event.target.value)} />
             {
               rowData.length !== 1 && !disabled && <Icon className={styles['remove_value_btn']} onClick={()=>{this.handleItemRemoveValue(item.id)}} type="close-circle" />
             }
