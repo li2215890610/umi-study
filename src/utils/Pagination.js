@@ -1,5 +1,4 @@
-
-export function Pagination(data, onChange, onShowSizeChange) {
+export function renderPagination(data, onChange, onShowSizeChange) {
   return {
     onChange: (current) => {
       onChange(current)
@@ -12,11 +11,11 @@ export function Pagination(data, onChange, onShowSizeChange) {
     showTotal: () => { //用于显示数据总量和当前数据顺序
       return `共${data.total_count}条`
     },
-    showSizeChanger: true, //是否可以该别 page_size 
+    showSizeChanger: data.showSizeChanger, //是否可以切换 page_size 
     onShowSizeChange: (current, size) => {
       onShowSizeChange(current, size)
     },
-    showQuickJumper: true, //是否可以快速跳转至某页
+    showQuickJumper: data.showQuickJumper, //是否可以快速跳转至某页
     hideOnSinglePage: true, //只有一页时是否隐藏分页器
   }
 }
