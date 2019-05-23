@@ -19,9 +19,14 @@ const plugins = [
       include: ["dva", "dva/router", "dva/saga",],
     }, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll  &&  https://blog.csdn.net/weixin_33768153/article/details/83148661
     
-    routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#antd
-      exclude: [],
-    }, 
+    routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#routes
+      //   /models\//,
+      //   /services\//,
+      //   /model\.(t|j)sx?$/,
+      //   /service\.(t|j)sx?$/,
+      //   /components\//,
+      // ],
+    },
 
     hardSource: false, //https://umijs.org/zh/plugin/umi-plugin-react.html#hardsource
 
