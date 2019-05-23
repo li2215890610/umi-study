@@ -9,7 +9,7 @@ const menuList = [{
     key: '/home/user'
 },
 {
-    title: '动态表单',
+    title: '编辑商品',
     icon: 'flag',
     key: '/home/product_edit'
 },

@@ -10,6 +10,8 @@ import { setLocale, formatMessage, getLocale } from 'umi/locale';
 
 import { storageGetItem, storageSetItem } from "@utils/localStorage";
 
+import logo from "../../assets/favicon.png";
+
 import router from 'umi/router';
 
 const { Header } = Layout;
@@ -49,17 +51,30 @@ class Headers extends React.Component {
 
     return (
       <Header>
-        <Row>
-          <Col span={9}>
-            <Select defaultValue={storageGetItem('locale') || getLocale()} onChange={this.languageHandleChange} className={styles['select__input']}>
-              {getOptionList(languageList)}
-            </Select>
+        <Row type="flex" justify="space-between">
+          <Col span={6}>
+            <Row type="flex" justify="start" align="middle" className={styles['user__handle']}>
+              <img src={logo} alt='logo' width='150' height='24' /> <span className={styles['logo_font']}>商家后台</span>
+            </Row>
           </Col>
-          <Col span={9}>
-            <div className={styles.header_go_out}>
-              <span>欢迎～{userName}</span>
-              <a onClick={this.loginOrd}>{formatMessage({id:'Header.sign_out'})}</a>
-            </div>
+
+          <Col span={18}>
+            <Row type="flex" justify="end" align="middle" className={styles['user__handle']}>
+
+              <Col className={styles['col___styles--handle']}>
+                <Select defaultValue={storageGetItem('locale') || getLocale()} onChange={this.languageHandleChange} className={styles['select__input']}>
+                  {getOptionList(languageList)}
+                </Select>
+              </Col>
+
+              <Col className={styles['col___styles--handle']}>
+                <div className={styles.header_go_out}>
+                  <span>欢迎～{userName}</span>
+                  <a onClick={this.loginOrd}>{formatMessage({ id: 'Header.sign_out' })}</a>
+                </div>
+              </Col>
+
+            </Row>
           </Col>
         </Row>
       </Header>

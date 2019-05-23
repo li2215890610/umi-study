@@ -13,8 +13,8 @@ export const routerBreakcrumbList = [{
   {
     path: '/home/product_edit',
     component: './DynamicForm/DynamicForm',
-    title: '动态表单',
-    breadcrumb: '动态表单',
+    title: '编辑商品',
+    breadcrumb: '编辑商品',
   },
   {
     path: '/home/ui',
