@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { message } from "antd";
 
-import { storageGetItem, storageRemoveItem } from "@utils/LocalStorage";
+import { storageGetItem, storageRemoveItem } from "@utils/localStorage";
 
 import baseURL from "./urlConfig";
 
