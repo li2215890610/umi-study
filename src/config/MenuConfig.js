@@ -4,9 +4,9 @@ const menuList = [{
     key: '/home',
 },
 {
-    title: 'user',
+    title: 'React声明周期',
     icon: 'user',
-    key: '/home/user'
+    key: '/home/react_component'
 },
 {
     title: '编辑商品',

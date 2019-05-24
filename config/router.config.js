@@ -23,9 +23,9 @@ export default [{
         title: 'Home',
       },
       {
-        path: '/home/user',
-        component: './Users/Users',
-        title: 'Users',
+        path: '/home/react_component',
+        component: './ReactComponent/ReactComponent',
+        title: 'ReactComponent',
       },
       {
         path: '/home/product_edit',

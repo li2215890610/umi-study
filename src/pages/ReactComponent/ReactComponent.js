@@ -1,10 +1,10 @@
 
 import React, { Component } from 'react';
+
 import { connect } from 'dva';
-import styles from './users.css';
 
 
-class users extends Component {
+class ReactComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,7 @@ class users extends Component {
   componentDidMount = () => {
     console.log("加载了")
     this.props.dispatch({
-      type: "users/getUsersList",
+      type: "ReactComponent/getUsersList",
       payload: {
 
       }
@@ -26,7 +26,7 @@ class users extends Component {
     
     return (
       <div>
-        Users
+        React声明周期
       </div>
     );
   }
@@ -71,6 +71,6 @@ export default connect(({ }) => {
   return {
 
   }
-})(users);
+})(ReactComponent);
 
 
