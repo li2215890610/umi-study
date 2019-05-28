@@ -1,5 +1,7 @@
 import { getRestaurantProductDetail, getMainCategoryList } from "../Services/index";
 
+import {  mainCategory} from "../main-category";
+
 export default {
   namespace: 'ProductEdit',
   state: {
@@ -49,7 +51,7 @@ export default {
 
       let main_category_list = [];
 
-      payload.list && payload.list.forEach((item, index) => {
+      mainCategory.forEach((item, index) => {
         if (item.verified) {
 
           main_category_list.push({

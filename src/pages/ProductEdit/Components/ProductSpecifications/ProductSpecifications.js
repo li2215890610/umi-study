@@ -104,9 +104,9 @@ class ProductSpecifications extends React.Component {
         </div>
 
         {
-          value && value.map((item) => {
+          value && value.map((item,index) => {
             return <SpecificationsValue
-              key={item.id}
+              key={index}
               value={item}
               pushSpecificationsList={this.pushSpecificationsList}
               removeSpecificationsList={this.removeSpecificationsList}

@@ -72,7 +72,14 @@ class ProductEdit extends Component {
 
           <ProductSpecificationsADD initialValue={[]} form={this.props.form} />
 
-          {/* <ProductSpecifications initialValue={[{}]} form={this.props.form} disabled={true} /> */}
+          <ProductSpecifications initialValue={[{
+            sku_name:"11",
+            price:222,
+            component:'',
+            everyday_inventory: 222,
+            present_inventory:222,
+            automatic: true
+          }]} form={this.props.form} disabled={true} />
 
           <ProductAttribute initialValue={productDetail.store_dish && productDetail.store_dish.attribute ? productDetail.store_dish.attribute : []} form={this.props.form} />
 
