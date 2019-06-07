@@ -46,8 +46,8 @@ class Headers extends React.Component {
   render() {
 
     let { userName } = this.state;
+
     const { languageList } = this;
-    {/* className={styles.header_top} */ }
 
     return (
       <Header>
@@ -62,7 +62,7 @@ class Headers extends React.Component {
             <Row type="flex" justify="end" align="middle" className={styles['user__handle']}>
 
               <Col className={styles['col___styles--handle']}>
-                <Select defaultValue={storageGetItem('locale') || getLocale()} onChange={this.languageHandleChange} className={styles['select__input']}>
+                <Select className={styles['select__input']} defaultValue={storageGetItem('locale') || getLocale()} onChange={this.languageHandleChange} className={styles['select__input']}>
                   {getOptionList(languageList)}
                 </Select>
               </Col>
@@ -100,19 +100,6 @@ class Headers extends React.Component {
     storageSetItem('locale', value).then((data) => {
       setLocale(value)
     })
-  }
-
-  storeStateHandleChange = (data) => {
-    router.push('/');
-    if (this.props.restaurant_list && this.props.restaurant_list[0].id) {
-      this.props.dispatch({
-        type: "StoreList/shelfWitch",
-        payload: {
-          restaurant_id: this.props.restaurant_list[0].id,
-          status: data
-        }
-      })
-    }
   }
 }
 
