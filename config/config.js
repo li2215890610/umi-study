@@ -16,7 +16,7 @@ const plugins = [
     },
     
     dll: {
-      include: ["dva", "dva/router", "dva/saga",],
+      include: ["dva", "dva/router", "dva/saga","axios"],
     }, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll  &&  https://blog.csdn.net/weixin_33768153/article/details/83148661
     
     routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#routes
