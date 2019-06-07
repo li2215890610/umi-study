@@ -58,25 +58,6 @@ const menuList = [{
     ]
 },
 {
-    title: '表格',
-    key: '/table',
-    icon: 'table',
-    children: [{
-        title: '综合表格',
-        key: '/table/basic',
-    },
-    {
-        title: '动态表格',
-        key: '/table/dynamic',
-    }
-    ]
-},
-{
-    title: '城市管理',
-    icon: 'flag',
-    key: '/city'
-},
-{
     title: '订单管理',
     key: '/order',
     icon: 'file-add',
@@ -85,16 +66,6 @@ const menuList = [{
         key: '/order/detail'
     }]
 },
-{
-    title: '员工管理',
-    icon: 'usergroup-add',
-    key: '/user'
-},
-{
-    title: '权限设置',
-    icon: 'codepen',
-    key: '/permission'
-}
 ];
 
 
