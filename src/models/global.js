@@ -5,6 +5,9 @@ export default {
   state: { 
     
   },
+  reducers:{
+
+  },
   effects: { 
   },
   // 订阅数据

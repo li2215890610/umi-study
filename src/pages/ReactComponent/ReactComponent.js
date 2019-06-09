@@ -12,16 +12,6 @@ class ReactComponent extends Component {
     }
   }
 
-  componentDidMount = () => {
-    console.log("加载了")
-    this.props.dispatch({
-      type: "ReactComponent/getUsersList",
-      payload: {
-
-      }
-    })
-  }
-
   render() {
     
     return (
