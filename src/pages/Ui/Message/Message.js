@@ -4,7 +4,7 @@ import { Card, Row, Col } from "antd";
 
 import { Button } from 'antd';
 
-// import { Messages}  from "utils/MessageUtlis";
+// import { Messages}  from "utils/messageUtlis";
 
 import Success from "./Success/Success";
 

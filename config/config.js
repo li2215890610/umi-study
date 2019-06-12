@@ -15,18 +15,21 @@ const plugins = [
       defaultTitle: "umi后台管理系统"
     },
     
-    dll: {
-      include: ["dva", "dva/router", "dva/saga","axios"],
-    }, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll  &&  https://blog.csdn.net/weixin_33768153/article/details/83148661
-    
     routes: { //https://umijs.org/zh/plugin/umi-plugin-react.html#routes
+      // exclude:[
+      //   /Models\//,
       //   /models\//,
-      //   /services\//,
+      //   /Services\//,
       //   /model\.(t|j)sx?$/,
-      //   /service\.(t|j)sx?$/,
-      //   /components\//,
-      // ],
+      //   /Service\.(t|j)sx?$/,
+      //   /Components\//,
+      // ]
     },
+
+    // dll: {
+    //   include: ["dva", "dva/router", "dva/saga", "axios", "umi/router",'antd/es'],
+    // }, //https://umijs.org/zh/plugin/umi-plugin-react.html#dll  &&  https://blog.csdn.net/weixin_33768153/article/details/83148661
+    dll: true,
 
     hardSource: false, //https://umijs.org/zh/plugin/umi-plugin-react.html#hardsource
 
@@ -44,14 +47,46 @@ const plugins = [
     },
 
     // dynamicImport:  false, // 关闭按需加载
+
+    // chunks: ['vendors', 'umi'], //https://umijs.org/zh/plugin/umi-plugin-react.html#chunks
   }],
 ]
 
 export default {
+
+    //https://umijs.org/zh/plugin/umi-plugin-react.html#chunks
+
+  // test: /[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom)[\\/]/,
+
+  // chainWebpack: function (config, { webpack }) {
+  //   config.merge({
+  //     optimization: {
+  //       minimize: true,
+  //       splitChunks: {
+  //         chunks: 'all',
+  //         minSize: 30000,
+  //         minChunks: 3,
+  //         automaticNameDelimiter: '.',
+  //         cacheGroups: {
+  //           vendor: {
+  //             name: 'vendors',
+  //             test({ resource }) {
+  //               return /[\\/]node_modules[\\/]/.test(resource);
+  //             },
+  //             priority: 10,
+  //           },
+  //         },
+  //       },
+  //     }
+  //   });
+  // },
+
   // singular:true, //https://umijs.org/zh/config/#singular
-  
+
   plugins: plugins,
 
+  treeShaking: true, //https://umijs.org/zh/config/#treeshaking
+  
   disableRedirectHoist: true, //详细见 https://umijs.org/zh/config/#disableredirecthoist
   
   routes: pageRoutes, // https://umijs.org/zh/guide/router.html#%E9%85%8D%E7%BD%AE%E5%BC%8F%E8%B7%AF%E7%94%B1
@@ -82,6 +117,7 @@ export default {
     '@utils': path.resolve(__dirname,'..', "src/utils"),
     '@components': path.resolve(__dirname,'..', "src/components"),
   },
+  
   targets: { //https://umijs.org/zh/config/#targets
     ie: 11,
   },

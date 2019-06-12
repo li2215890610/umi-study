@@ -1,5 +1,12 @@
 
-export function storageSetItem(name, data) {
+/**
+ * 
+ *  storageSetItem('locale', value).then((data) => {
+ *    
+ *  })
+ */
+
+export const storageSetItem = (name, data)=> {
   return new Promise((resolve, reject) => {
       if (data) {
           localStorage.setItem(name, JSON.stringify(data))
@@ -10,13 +17,21 @@ export function storageSetItem(name, data) {
   })
 }
 
-export function storageGetItem(name) {
+/**
+ * storageGetItem('locale')
+ */
+export const storageGetItem = (name)=> {
 
   return JSON.parse(localStorage.getItem(name))
 }
 
-export function storageRemoveItem(name) {
-  return new Promise((resolve, reject) => {
+/**
+ * 	storageRemoveItem('loginSession').then((data) => {
+ *		
+ *	})
+ */
+export const storageRemoveItem = (name)=> {
+  return new Promise((resolve,) => {
       if (name) {
           localStorage.removeItem(name)
           resolve("success")

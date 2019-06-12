@@ -6,7 +6,7 @@ import ErrorNotification from "../../Notification/ErrorNotification/ErrorNotific
 
 import Loading from "../../Loading/Loading";
 
-// import { Messages} from "utils/MessageUtlis";
+// import { Messages} from "utils/messageUtlis";
 
 import { Tabs } from "antd";
 

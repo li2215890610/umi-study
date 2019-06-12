@@ -2,7 +2,7 @@ import React from "react";
 
 import { Form, Input, Button, Icon, Checkbox } from "antd";
 
-// import { Messages} from "utils/MessageUtlis";
+// import { Messages} from "utils/messageUtlis";
 
 const FormItem = Form.Item;
 
