@@ -1,11 +1,19 @@
 import moment from 'moment';
 
+/**
+ * momentFormatDate(data[0], "YYYY-MM-DD"),
+ * @param {*} moments 
+ * @param {*} format 
+ */
 
 export function MomentFormatDate(moments,format ) {
   
   return moments && moment(moments).format(format)
 }
 
+/**
+ * momentFillingDate([start_time, end_time,], "YYYY-MM-DD")
+ */
 export function MomentFillingDate(moments,format ) {
   
   if (moments.length === 1) {

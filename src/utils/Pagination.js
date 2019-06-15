@@ -1,3 +1,20 @@
+/**
+ * 
+ * 
+ *  <Pagination {...renderPagination({
+      total_count: total_count,
+      page: page,
+      page_size: page_size,
+      showQuickJumper: false,
+      showSizeChanger: false
+    }, this.onChange,this.onShowSizeChange)} />
+ * 
+ * @param {*} data 
+ * @param {*} onChange  触发 页数变化 
+ * @param {*} onShowSizeChange   触发 page_size变化 
+ */
+
+ 
 export function renderPagination(data, onChange, onShowSizeChange) {
   return {
     onChange: (current) => {
