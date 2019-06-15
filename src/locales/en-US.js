@@ -1,5 +1,6 @@
-import Header from "./en-US/Header";
+
+import localesMessage from "./en-US/index";
 
 export default {
-  ...Header
+  ...localesMessage
 }
