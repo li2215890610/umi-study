@@ -10,11 +10,11 @@ import { setLocale, formatMessage, getLocale } from 'umi/locale';
 
 import { storageGetItem, storageSetItem } from "@utils/localStorage";
 
-import logo from "../../assets/favicon.png";
-
 import router from 'umi/router';
 
 const { Header } = Layout;
+
+const logo = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
 
 class Headers extends React.Component {
 
@@ -54,7 +54,7 @@ class Headers extends React.Component {
         <Row type="flex" justify="space-between">
           <Col span={6}>
             <Row type="flex" justify="start" align="middle" className={styles['user__handle']}>
-              <img src={logo} alt='logo' width='150' height='24' /> <span className={styles['logo_font']}>商家后台</span>
+              <img src={logo} alt='logo' height='24' /> <span className={styles['logo_font']}>umi商家后台</span>
             </Row>
           </Col>
 
