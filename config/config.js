@@ -95,7 +95,7 @@ export default {
   
   // base:"", //https://umijs.org/zh/config/#base
 
-
+  hash: true,
   // theme: { // 定制UI // https://ant.design/docs/react/customize-theme-cn
   //   'primary-color': "#202020",
   // },
