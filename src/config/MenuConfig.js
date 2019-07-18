@@ -66,6 +66,11 @@ const menuList = [{
         key: '/order/detail'
     }]
 },
+{
+    title: '学习export',
+    icon: 'home',
+    key: '/home/export_study',
+},
 ];
 
 

@@ -32,7 +32,7 @@ export const routerBreakcrumbList = [{
   path: '/home/ui/modal',
   component: './Ui/Modal/Modal',
   title: 'Modal',
-  breadcrumb: 'Modal',
+  breadcrumb: '弹框',
 },
 {
   path: '/home/ui/loading',
@@ -44,25 +44,25 @@ export const routerBreakcrumbList = [{
   path: '/home/ui/notification',
   component: './Ui/Notification/Notification',
   title: 'Notification',
-  breadcrumb: 'Notification',
+  breadcrumb: '通知提醒',
 },
 {
   path: '/home/ui/message',
   component: './Ui/Message/Message',
   title: 'Message',
-  breadcrumb: 'Message',
+  breadcrumb: '全局Message',
 },
 {
   path: '/home/ui/tab',
   component: './Ui/tab/tab',
   title: 'tab',
-  breadcrumb: 'tab',
+  breadcrumb: 'Tab页签',
 },
 {
   path: '/home/form',
   component: './Form/Form',
   title: 'form',
-  breadcrumb: 'form',
+  breadcrumb: '表单',
 },
 {
   path: '/home/form/login',

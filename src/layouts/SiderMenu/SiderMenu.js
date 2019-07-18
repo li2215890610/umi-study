@@ -4,7 +4,7 @@ import { Menu, Icon, Button, Layout } from 'antd';
 
 import { NavLink } from 'dva/router';
 
-import menuConfig from "../../config/MenuConfig.js";
+import menuConfig from "../../config/menuConfig.js";
 
 import styles from "./SiderMenu.css";
 
