@@ -8,9 +8,9 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "antd": "^3.18.2",
+    "antd": "^3.19.5",
     "axios": "^0.18.0",
-    "dva": "^2.5.0-beta.2",
+    "dva": "^2.6.0-beta.6",
     "moment": "^2.24.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",

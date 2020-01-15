@@ -13,10 +13,12 @@ class ReactComponent extends Component {
   }
 
   render() {
-    
+    console.log("我执行render了")
     return (
       <div>
-        React声明周期
+        <div>React声明周期</div>
+
+        <button onClick={this.onClicks}>点我</button>
       </div>
     );
   }
@@ -35,6 +37,7 @@ class ReactComponent extends Component {
   }
   //返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。 可以在你确认不需要更新组件时使用。
   shouldComponentUpdate(newProps, newState) {
+    console.log("执行shouldComponentUpdate")
     return true;
   }
   //在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。
@@ -52,6 +55,7 @@ class ReactComponent extends Component {
   //绑定方法
   onClicks = (e, num) => {
     console.log(e, num);
+    this.setState({})
   }
 
 }
