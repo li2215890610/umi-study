@@ -27,19 +27,19 @@ class Message extends React.Component {
       <div>
         <Card title='通知提醒框 (message)' className={styles.card}>
           <Row>
-            <Col span='4'>
+            <Col span={4}>
               <Success />
             </Col>
-            <Col span='4'>
+            <Col span={4}>
               <Error />
             </Col>
-            <Col span='4'>
+            <Col span={4}>
               <Info />
             </Col>
-            <Col span='4'>
+            <Col span={4}>
               <Warning />
             </Col>
-            <Col span='4'>
+            <Col span={4}>
               <Button type="primary" onClick={this.onMessages}>自定义封装</Button>
             </Col>
           </Row>

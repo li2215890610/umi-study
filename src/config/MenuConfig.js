@@ -59,7 +59,7 @@ const menuList = [{
 },
 {
     title: '订单管理',
-    key: '/order',
+    key: '/home/order',
     icon: 'file-add',
     children: [{
         title: '订单详情',

@@ -35,7 +35,7 @@ class SiderMenu extends React.Component {
 
   // src/config/MenuConfig.js menuList里面第一层key
   // rootSubmenuKeys = ['/home','/home/react_component','/home/product_edit','/home/ui', '/home/form', '/table', '/city', '/order', '/user']
-  rootSubmenuKeys = ['/home/ui', '/home/form', '/order']
+  rootSubmenuKeys = ['/home/ui', '/home/form', '/home/order']
 
   toggleCollapsed = () => {
     this.setState({
@@ -124,7 +124,7 @@ class SiderMenu extends React.Component {
             mode="inline"  // 菜单样式
             theme={theme} //定义主题颜色
             // defaultOpenKeys={openKeys} // 默认展开的 一级菜单项
-            // selectedKeys={[current]} //默认选中
+            //selectedKeys={[current]} //默认选中
             onClick={this.handleClick} //点击 MenuItem 调用此函数
             openKeys={openKeys} //当前展开的 SubMenu 菜单项 key 数组
             onOpenChange={this.onOpenChange}  //SubMenu 展开/关闭的回调
@@ -142,18 +142,21 @@ class SiderMenu extends React.Component {
   renderPathname = (data, cb) => {
 
     let pathname = [`/form/`, `/order/`, `/table/`, `/ui/`]
+    
+    let openKeys;
 
     pathname.map((item) => {
       if (data.search(item) !== -1) {
-        let openKeys = `/home${item}`
+        openKeys = `/home${item}`;        
         openKeys = openKeys.substring(0, openKeys.length - 1);
-        cb({
-          menu: data,
-          openKeys: [openKeys]
-        })
       }
     })
-
+    
+    cb({
+      menu: data,
+      openKeys: openKeys ? [openKeys]:[]
+    })
+    
   }
 
 }
