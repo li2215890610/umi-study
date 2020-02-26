@@ -34,7 +34,8 @@ class SiderMenu extends React.Component {
   }
 
   // src/config/MenuConfig.js menuList里面第一层key
-  rootSubmenuKeys = ['/home','/home/react_component','/home/product_edit','/home/ui', '/home/form', '/table', '/city', '/order', '/user']
+  // rootSubmenuKeys = ['/home','/home/react_component','/home/product_edit','/home/ui', '/home/form', '/table', '/city', '/order', '/user']
+  rootSubmenuKeys = ['/home/ui', '/home/form', '/order']
 
   toggleCollapsed = () => {
     this.setState({
@@ -43,9 +44,9 @@ class SiderMenu extends React.Component {
   }
 
   onOpenChange = (openKeys) => {
-    
+
     const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-    
+
     if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
       this.setState({ openKeys });
     } else {
@@ -60,6 +61,7 @@ class SiderMenu extends React.Component {
     this.renderPathname(key, (data) => {
       this.setState({
         current: data.menu,
+        openKeys: data.openKeys
       })
     })
   }
@@ -105,7 +107,7 @@ class SiderMenu extends React.Component {
 
     let { collapsed, current, openKeys } = this.state;
 
-    let theme = 'inline' // dark;
+    let theme = 'light' // dark;
 
     return (
       <div className={`nav_left ${styles.nav_left}`}>
@@ -121,8 +123,8 @@ class SiderMenu extends React.Component {
           <Menu
             mode="inline"  // 菜单样式
             theme={theme} //定义主题颜色
-            defaultOpenKeys={['/home']} // 默认展开的 一级菜单项
-            selectedKeys={[current]} //默认选中
+            // defaultOpenKeys={openKeys} // 默认展开的 一级菜单项
+            // selectedKeys={[current]} //默认选中
             onClick={this.handleClick} //点击 MenuItem 调用此函数
             openKeys={openKeys} //当前展开的 SubMenu 菜单项 key 数组
             onOpenChange={this.onOpenChange}  //SubMenu 展开/关闭的回调
@@ -139,32 +141,19 @@ class SiderMenu extends React.Component {
 
   renderPathname = (data, cb) => {
 
-    if (data.search(`/form/`) !== -1) {
-      cb({
-        menu: data,
-        openKeys: [`/home/form`]
-      })
-    } else if (data.search(`/order/`) !== -1) {
-      cb({
-        menu: data,
-        openKeys: [`/home/order`]
-      })
-    } else if (data.search(`/table/`) !== -1) {
-      cb({
-        menu: data,
-        openKeys: [`/home/table`]
-      })
-    } else if (data.search(`/ui/`) !== -1) {
-      cb({
-        menu: data,
-        openKeys: [`/home/ui`]
-      })
-    } else {
-      cb({
-        menu: data,
-        openKeys: []
-      })
-    }
+    let pathname = [`/form/`, `/order/`, `/table/`, `/ui/`]
+
+    pathname.map((item) => {
+      if (data.search(item) !== -1) {
+        let openKeys = `/home${item}`
+        openKeys = openKeys.substring(0, openKeys.length - 1);
+        cb({
+          menu: data,
+          openKeys: [openKeys]
+        })
+      }
+    })
+
   }
 
 }
