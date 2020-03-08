@@ -99,16 +99,16 @@ export default {
 
     * getMainCategoryList({ payload }, { put, call, }) {
 
-      const result = yield call(getMainCategoryList, { ...payload });
+      // const result = yield call(getMainCategoryList, { ...payload });
 
-      if (result.data) {
-        yield put({
-          type: 'mainCategoryList',
-          payload: {
-            list: result.data.list
-          }
-        });
-      }
+      // if (result.data) {
+      //   yield put({
+      //     type: 'mainCategoryList',
+      //     payload: {
+      //       list: [] //result.data.list
+      //     }
+      //   });
+      // }
     },
   },
   // 订阅数据
