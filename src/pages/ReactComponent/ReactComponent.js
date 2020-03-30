@@ -1,14 +1,15 @@
 
 import React, { Component } from 'react';
+import Child from "./Child";
 
-import { connect } from 'dva';
+// import { connect } from 'dva';
 
 
 class ReactComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      value: ""
     }
   }
 
@@ -18,10 +19,22 @@ class ReactComponent extends Component {
       <div>
         <div>React声明周期</div>
 
+
+        <input onChange={this.onChange.bind(this)}/>
+
         <button onClick={this.onClicks}>点我</button>
+
+        <Child value={this.state.value} onClick={this.propsChild}/>
       </div>
     );
   }
+
+  onChange(e){
+    this.setState({
+      value: e.target.value
+    })
+  }
+
 
   //在渲染前调用
   componentWillMount() {
@@ -53,18 +66,21 @@ class ReactComponent extends Component {
     console.log('Component WILL UNMOUNT!')
   }
   //绑定方法
-  onClicks = (e, num) => {
+  onClicks = (e, num, value) => {
     console.log(e, num);
-    this.setState({})
   }
 
+  propsChild(value){
+    alert(value)
+
+  }
 }
 
 
-export default connect(({ }) => {
-  return {
+// export default connect(({ }) => {
+//   return {
 
-  }
-})(ReactComponent);
+//   }
+// })(ReactComponent);
 
-
+export default ReactComponent;
