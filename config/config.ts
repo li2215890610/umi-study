@@ -5,5 +5,6 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  title: 'umi@3.0',
   routes: routes,
 });
