@@ -1,0 +1,19 @@
+@import '~antd/es/style/themes/default.less';
+@import '../index.less';
+
+.rc {
+  height: @layout-header-height;
+  display: flex;
+  justify-content: flex-end;
+  .action {
+    padding: @header-item-padding;
+    cursor: pointer;
+    > span {
+      color: @text-color;
+      vertical-align: middle;
+    }
+    &:hover {
+      background: @header-hover-bg;
+    }
+  }
+}
