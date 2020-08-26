@@ -25,8 +25,10 @@ export default [
       },
       {
         path: '/login',
-        exact: true,
-        component: '@/pages/login',
+        component: '@/pages/Login',
+      },
+      {
+        component: '@/pages/404',
       },
     ],
   },

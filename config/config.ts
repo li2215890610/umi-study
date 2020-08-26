@@ -21,5 +21,8 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/components/DynamicLoading/index',
   },
+  targets: {
+    ie: 9,
+  },
   routes: routes,
 });
