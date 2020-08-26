@@ -1,5 +1,12 @@
 import React, { FC } from 'react';
-import { LoginModelState, ConnectProps, Loading, connect } from 'umi';
+import {
+  LoginModelState,
+  ConnectProps,
+  Loading,
+  connect,
+  useIntl,
+  getLocale,
+} from 'umi';
 
 interface Props extends ConnectProps {
   login: LoginModelState['state'];
@@ -8,9 +15,15 @@ interface Props extends ConnectProps {
 
 const Login: FC<Props> = ({ login }) => {
   // const { name } = login;
+  const intl = useIntl();
   console.log(login);
-
-  return <div>Hello `{login.name}`111</div>;
+  console.log(getLocale());
+  return (
+    <div>
+      Hello
+      {intl.formatMessage({ id: 'name' }, { default_name: '旅行者' })}111
+    </div>
+  );
 };
 
 export default connect(

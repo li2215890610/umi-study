@@ -5,7 +5,17 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  title: 'umi@3.0', //
+  //title 应该和国际化配合使用
+  title: 'umi@3', //https://umijs.org/zh-CN/config#title
+  locale: {
+    //https://umijs.org/zh-CN/plugins/plugin-locale
+    default: 'zh-CN', //https://umijs.org/zh-CN/plugins/plugin-locale#default
+    antd: true, //https://umijs.org/zh-CN/plugins/plugin-locale#antd
+    title: true, //https://umijs.org/zh-CN/plugins/plugin-locale#title
+    baseNavigator: false, //https://umijs.org/zh-CN/plugins/plugin-locale#basenavigator
+    // useLocalStorage: true,
+    baseSeparator: '-', //https://umijs.org/zh-CN/plugins/plugin-locale#baseseparator
+  },
   proxy: {
     '/businessAssistantApi': {
       target: 'http://localhost:10086/mock/businessAssistantApi/',
@@ -25,4 +35,5 @@ export default defineConfig({
     ie: 9,
   },
   routes: routes,
+  ignoreMomentLocale: true, // https://umijs.org/zh-CN/config#ignoremomentlocale
 });
