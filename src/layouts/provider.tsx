@@ -1,6 +1,6 @@
 import React from 'react';
 // import { FusionContext } from './context';
-// import Layout from './index';
+import Layout from './index';
 
 const Provider: React.FC<{}> = props => (
   // <FusionContext.Provider
@@ -8,9 +8,9 @@ const Provider: React.FC<{}> = props => (
   //     nolayout: false,
   //   }}
   // >
-  //   <Layout>{props.children}</Layout>
+  <Layout>{props.children}</Layout>
   // </FusionContext.Provider>
-  <div>{props.children}</div>
+  // <div>{props.children}</div>
 );
 
 export default Provider;

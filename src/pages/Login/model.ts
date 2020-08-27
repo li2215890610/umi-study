@@ -1,6 +1,6 @@
 import { Effect, ImmerReducer } from 'umi';
 
-export interface StateType {
+export interface State {
   // status?: 'ok' | 'error';
   // type?: string;
   // currentAuthority?: 'user' | 'guest' | 'admin';
@@ -9,16 +9,16 @@ export interface StateType {
 
 export interface LoginModelState {
   namespace: string;
-  state: StateType;
+  state: State;
   effects: {
     login: Effect;
   };
   reducers: {
-    changeLoginStatus: ImmerReducer<StateType>;
+    changeLoginStatus: ImmerReducer<State>;
   };
 }
 
-const Model: LoginModelState = {
+const Login: LoginModelState = {
   namespace: 'login',
   state: {
     // status: undefined,
@@ -58,4 +58,4 @@ const Model: LoginModelState = {
   },
 };
 
-export default Model;
+export default Login;
