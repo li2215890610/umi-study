@@ -5,7 +5,6 @@ export const dva = {
     message.error(e.message, 3);
   },
 };
-type Locations = window.location;
 
 //https://umijs.org/zh-CN/docs/runtime-config#onroutechange-routes-matchedroutes-location-action-
 // export function onRouteChange({ location: Locations
