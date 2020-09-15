@@ -1,4 +1,4 @@
-import { f0Agent, Req } from '@/utils/request';
+import { requestHttp, Req } from '@/utils/request';
 import { Store } from '@/domains/entities/Store';
 
 /**
@@ -18,7 +18,6 @@ export async function fetchStore(params: StoreFetchParams) {
     return {
       method: 'GET',
       url: '@mpApi/store/detail',
-      credentials: 'include',
       auth: true,
     };
   };
@@ -33,5 +32,5 @@ export async function fetchStore(params: StoreFetchParams) {
     };
   };
 
-  return f0Agent<ReqData, ResDataInner>(reqTransfer()).then(resTransfer);
+  return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(resTransfer);
 }

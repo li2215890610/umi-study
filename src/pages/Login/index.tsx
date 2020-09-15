@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import {
   LoginModelState,
   ConnectProps,
@@ -6,6 +6,7 @@ import {
   connect,
   useIntl,
   getLocale,
+  useDispatch,
 } from 'umi';
 import { Form, Input, Button, Space } from 'antd';
 import styles from './index.less';
@@ -22,11 +23,18 @@ const Login: FC<Props> = ({ login }) => {
   console.log(getLocale());
 
   const [form] = Form.useForm();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: 'login/getData',
+    });
+  }, []);
+  // Hello
+  // {intl.formatMessage({ id: 'name' }, { default_name: '旅行者' })}111
 
   return (
     <div>
-      Hello
-      {intl.formatMessage({ id: 'name' }, { default_name: '旅行者' })}111
       <div>
         <div className={styles.login_header}>
           <div className={styles.logo}>
@@ -110,15 +118,13 @@ const Login: FC<Props> = ({ login }) => {
                 <Form.Item>
                   <Space>
                     <Button type="primary" htmlType="submit">
-                      {' '}
-                      Submit{' '}
+                      登陆
                     </Button>
                     <Button
                       htmlType="button"
                       onClick={() => form.resetFields()}
                     >
-                      {' '}
-                      重置{' '}
+                      重置
                     </Button>
                     <Button
                       type="link"

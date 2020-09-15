@@ -18,7 +18,7 @@ export default defineConfig({
   },
   proxy: {
     '/businessAssistantApi': {
-      target: 'http://localhost:10086/mock/businessAssistantApi/',
+      target: 'http://10.15.105.158:10086/mock/businessAssistantApi/',
       changeOrigin: true,
       pathRewrite: { '^/businessAssistantApi': '' },
     },

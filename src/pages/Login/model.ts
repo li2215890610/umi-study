@@ -1,4 +1,5 @@
 import { Effect, ImmerReducer } from 'umi';
+import { fetchLogin } from './services/Login';
 
 export interface State {
   // status?: 'ok' | 'error';
@@ -12,6 +13,7 @@ export interface LoginModelState {
   state: State;
   effects: {
     login: Effect;
+    getData: Effect;
   };
   reducers: {
     changeLoginStatus: ImmerReducer<State>;
@@ -32,7 +34,10 @@ const Login: LoginModelState = {
       //   payload: response,
       // });
     },
-
+    *getData({ payload }, { call, put }) {
+      const response = yield call(fetchLogin, payload);
+      console.log(response, '______response______');
+    },
     // logout() {
     //   const { redirect } = getPageQuery();
     //   // Note: There may be security issues, please note
