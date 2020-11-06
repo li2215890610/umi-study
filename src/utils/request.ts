@@ -40,6 +40,7 @@ export type Req<T> = {
   delay?: number; //延迟几秒
   formData?: boolean;
   responseType?: RequestOptionsInit['responseType'];
+  auth?: boolean;
 };
 
 /**
@@ -86,6 +87,7 @@ export const requestHttp = <ReqData extends object, ResDataInner>(
         //       : 'application/json;charset=utf-8',
         // } : {},
         req.header ? req.header : {},
+        // req.auth ? { 'x-jinju-store-id': get().storeId || '', } : {}
       ]),
     };
 

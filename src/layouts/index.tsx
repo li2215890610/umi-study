@@ -21,7 +21,7 @@ const BasicLayout: React.FC<{}> = props => {
           <Header className={styles.header}>
             <div className={styles.headerInner}>
               <GlobalHeader />
-              <TokenMonitor />
+              {/* <TokenMonitor /> */}
             </div>
           </Header>
           <Content className={styles.content}>

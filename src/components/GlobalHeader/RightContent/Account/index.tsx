@@ -6,7 +6,7 @@ import {
   SettingOutlined,
   SwapOutlined,
 } from '@ant-design/icons';
-// import { useSelector, useDispatch } from 'umi';
+import { useSelector, useDispatch } from 'umi';
 
 const Account: React.FC<{}> = () => {
   // const userState = useSelector((state: RootState) => {
@@ -17,7 +17,7 @@ const Account: React.FC<{}> = () => {
   //   return state.store;
   // });
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <Dropdown
@@ -33,9 +33,9 @@ const Account: React.FC<{}> = () => {
                 window.open('https://jinjuxiaodian.com/v3/setting/user');
                 break;
               case 'logout':
-                // dispatch({
-                //   type: 'user/logout',
-                // });
+                dispatch({
+                  type: 'user/logout',
+                });
                 break;
               default:
                 break;

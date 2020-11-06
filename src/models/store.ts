@@ -1,6 +1,8 @@
 import { Effect, Reducer } from 'umi';
 import { fetchStore, StoreFetchResult } from '@/domains/services/Store';
 
+export const NS = 'store';
+
 export type State = StoreFetchResult;
 
 const defaultState: State = {
@@ -9,7 +11,7 @@ const defaultState: State = {
 };
 
 export interface StoreModel {
-  namespace: 'store';
+  namespace: string;
   state: State;
   effects: {
     fetch: Effect;
@@ -21,7 +23,7 @@ export interface StoreModel {
 }
 
 const StoreModel: StoreModel = {
-  namespace: 'store',
+  namespace: NS,
 
   state: defaultState,
 

@@ -1,14 +1,14 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import {
   LoginModelState,
   ConnectProps,
   Loading,
   connect,
-  useIntl,
-  getLocale,
   useDispatch,
 } from 'umi';
-import { Form, Input, Button, Space } from 'antd';
+
+import { Form, Input, Button, Space, Spin } from 'antd';
+import * as Action from './action';
 import styles from './index.less';
 
 interface Props extends ConnectProps {
@@ -16,25 +16,13 @@ interface Props extends ConnectProps {
   loading: boolean;
 }
 
-const Login: FC<Props> = ({ login }) => {
-  const { name } = login;
-  const intl = useIntl();
+const Login: FC<Props> = ({ login, loading }) => {
   console.log(login);
-  console.log(getLocale());
-
   const [form] = Form.useForm();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch({
-      type: 'login/getData',
-    });
-  }, []);
-  // Hello
-  // {intl.formatMessage({ id: 'name' }, { default_name: '旅行者' })}111
-
   return (
-    <div>
+    <Spin spinning={!!loading}>
       <div>
         <div className={styles.login_header}>
           <div className={styles.logo}>
@@ -42,7 +30,7 @@ const Login: FC<Props> = ({ login }) => {
               src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
               alt="慕课后台管理系统"
             />
-            umi全家桶后台管理系统学习V3
+            Umi全家桶后台管理系统学习V3
           </div>
         </div>
         <div className={styles.login_content_wrap}>
@@ -63,6 +51,12 @@ const Login: FC<Props> = ({ login }) => {
                 name="control-hooks"
                 onFinish={values => {
                   console.log(values);
+                  dispatch(
+                    Action.login({
+                      username: values.username,
+                      password: values.password,
+                    }),
+                  );
                 }}
               >
                 <Form.Item
@@ -99,7 +93,7 @@ const Login: FC<Props> = ({ login }) => {
                     },
                   ]}
                 >
-                  <Input placeholder="请输入密码" />
+                  <Input.Password placeholder="请输入密码" />
                 </Form.Item>
 
                 {/* <Form.Item
@@ -145,7 +139,7 @@ const Login: FC<Props> = ({ login }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Spin>
   );
 };
 

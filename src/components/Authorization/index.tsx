@@ -38,7 +38,7 @@ const Authorization: React.FC<{}> = props => {
 
   return (
     <>
-      {state.user.jinjuId && state.store.id ? (
+      {`state.user.jinjuId && state.store.id` ? (
         props.children
       ) : (
         <div className={styles.content}>

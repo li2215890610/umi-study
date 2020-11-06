@@ -28,9 +28,10 @@ export async function fetchLogin(params: fetchLoginParams) {
     };
   };
 
-  // const resTransfer = (res: ResDataInner): fetchLoginResult => { };
+  // const resTransfer = (res: ResDataInner): fetchLoginResult => res;
 
   const resTransfer = (res: ResDataInner): fetchLoginResult | void => {
+    return res;
     if (res.length) {
       return res;
     }
