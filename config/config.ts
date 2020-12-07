@@ -23,6 +23,12 @@ export default defineConfig({
       changeOrigin: true,
       pathRewrite: { '^/businessAssistantApi': '' },
     },
+    '/userApi': {
+      target:
+        'https://www.easy-mock.com/mock/5fcd93584ae32e320c62ccd3/UmiV3/user',
+      changeOrigin: true,
+      pathRewrite: { '^/userApi': '' },
+    },
   },
   hash: true, //https://umijs.org/zh-CN/config#hash
   // dva:{//https://umijs.org/zh-CN/plugins/plugin-dva
@@ -34,6 +40,9 @@ export default defineConfig({
   },
   targets: {
     ie: 9,
+  },
+  define: {
+    PROXY_ENV: process.env.PROXY_ENV,
   },
   routes: routes,
   ignoreMomentLocale: true, // https://umijs.org/zh-CN/config#ignoremomentlocale

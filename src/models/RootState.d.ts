@@ -5,7 +5,7 @@ import { State as LocalesState } from '@/pages/Dashboard/Locales/model';
 
 export type RootState = {
   user: UserState;
-  // loading: any;
+  loading: any;
   store: StoreState;
   login: LoginState;
   locales: LocalesState;

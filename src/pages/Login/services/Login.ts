@@ -21,20 +21,24 @@ export async function fetchLogin(params: fetchLoginParams) {
 
   const reqTransfer = (): Req<ReqData> => {
     return {
-      method: 'GET',
-      url: `http://127.0.0.1:10086/businessAssistantApi/task`,
-      params: params,
-      // formData: true
+      method: 'POST',
+      url: `@userApi/login`,
+      data: {
+        password: params.password,
+        username: params.username,
+      },
+      // formData: true,
+      // delay: 2 * 1000
     };
   };
 
-  // const resTransfer = (res: ResDataInner): fetchLoginResult => res;
-
   const resTransfer = (res: ResDataInner): fetchLoginResult | void => {
-    return res;
-    if (res.length) {
-      return res;
-    }
+    console.log(res, '_________');
+
+    // return res;
+    // if (res.length) {
+    //   return res;
+    // }
   };
 
   return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(res =>

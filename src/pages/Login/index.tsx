@@ -5,9 +5,12 @@ import {
   Loading,
   connect,
   useDispatch,
+  useSelector,
 } from 'umi';
-
+import { RootState } from '@/models/RootState';
 import { Form, Input, Button, Space, Spin } from 'antd';
+import { TNAME } from '@/utils/action';
+import * as Model from './model';
 import * as Action from './action';
 import styles from './index.less';
 
@@ -16,14 +19,18 @@ interface Props extends ConnectProps {
   loading: boolean;
 }
 
-const Login: FC<Props> = ({ login, loading }) => {
-  console.log(login);
+const Login: FC<Props> = ({ login }) => {
+  // console.log(login,loading);
   const [form] = Form.useForm();
   const dispatch = useDispatch();
 
+  const fetching = useSelector((state: RootState) => {
+    return !!state.loading.effects[TNAME(Action.ActionTypes.Login, Model.NS)];
+  });
+
   return (
-    <Spin spinning={!!loading}>
-      <div>
+    <Spin spinning={fetching}>
+      <div style={{ width: '100vw' }}>
         <div className={styles.login_header}>
           <div className={styles.logo}>
             <img
@@ -40,9 +47,9 @@ const Login: FC<Props> = ({ login, loading }) => {
               引领城市新经济发展
             </div>
             <div className={styles.login_box}>
-              <div className={styles.error_msg_wrap}>
+              {/* <div className={styles.error_msg_wrap}>
                 <div className={styles.show}></div>
-              </div>
+              </div> */}
               <div className={styles.title}>欢迎使用</div>
 
               <Form

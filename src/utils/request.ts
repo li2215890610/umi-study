@@ -3,6 +3,9 @@
  * 更详细的 api 文档: https://github.com/umijs/umi-request
  */
 import { extend, RequestOptionsInit } from 'umi-request';
+import { baseUrlMap, BaseUrlMap } from '@/configs/services';
+import { HttpError, BusinessError } from '@/errors';
+import { message } from 'antd';
 
 const codeMessage: {
   [statusCode: number]: string;
@@ -51,11 +54,29 @@ export type Res<D> = {
   data: D;
 };
 
-const request = extend({
+/**
+ * 异常处理程序
+ */
+const errorHandler = (error: { response: Response }): void => {
+  const { response } = error;
+  if (response && response.status) {
+    const errorText = codeMessage[response.status] || response.statusText;
+    const { status, url } = response;
+    throw new HttpError({
+      message: errorText,
+      statusCode: status,
+    });
+  } else if (!response) {
+    throw new HttpError({
+      message: '网络异常',
+      statusCode: -1,
+    });
+  }
+};
+
+const AJAX = extend({
   timeout: 6000, //设置超时时间
-  errorHandler: function(error) {
-    /* 异常处理 */
-  },
+  errorHandler,
 });
 
 const requestHeaderHandler = (header: any) => {
@@ -69,10 +90,21 @@ const requestHeaderHandler = (header: any) => {
   return newList;
 };
 
+export const resolveUrl = (url: string) => {
+  const match = url.match(/^@([^\/]+)(.+)/);
+  if (match && match[1] && match[2]) {
+    const key: keyof BaseUrlMap = match[1] as keyof BaseUrlMap;
+    return baseUrlMap[key] ? `${baseUrlMap[key]}${match[2]}` : url;
+  }
+  return url;
+};
+
+type ResDataInner = any;
+
 export const requestHttp = <ReqData extends object, ResDataInner>(
   req: Req<ReqData>,
 ): Promise<ResDataInner> => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     const requestData = {
       method: (req.method && req.method.toLocaleLowerCase()) || 'get',
       data: req.data,
@@ -80,30 +112,52 @@ export const requestHttp = <ReqData extends object, ResDataInner>(
       requestType: req.requestType,
       responseType: req.responseType || undefined,
       headers: requestHeaderHandler([
-        // !req.formData ? {
-        //   'Content-Type':
-        //     req.requestType === 'form'
-        //       ? 'application/x-www-form-urlencoded;charset=utf-8'
-        //       : 'application/json;charset=utf-8',
-        // } : {},
+        !req.formData
+          ? {
+              'Content-Type':
+                req.requestType === 'form'
+                  ? 'application/x-www-form-urlencoded;charset=utf-8'
+                  : 'application/json;charset=utf-8',
+            }
+          : {},
         req.header ? req.header : {},
-        // req.auth ? { 'x-jinju-store-id': get().storeId || '', } : {}
       ]),
     };
 
-    request(req.url, requestData)
+    AJAX(resolveUrl(req.url), requestData)
       .then(res => {
-        setTimeout(() => {});
-        if (res.status && res.status.code === 0) {
+        if (res) {
           return req.delay
-            ? setTimeout(() => {
-                resolve(res.result);
-              }, req.delay)
-            : resolve(res.result);
+            ? new Promise(resolve => {
+                setTimeout(() => {
+                  resolve(res);
+                }, req.delay);
+              })
+            : res;
+        }
+      })
+      .then(res => {
+        if (res.code === 0) {
+          return resolve(res.result);
+        } else {
+          debugger;
+          throw new BusinessError({
+            message: (res && res.msg) || '未知错误[requestHttp]',
+            code: (res && res.code) || -1,
+            req,
+          });
         }
       })
       .catch(e => {
-        reject(e);
+        console.log(e, '_____e____');
+
+        message.error(e);
       });
   });
 };
+
+// type F0ResData<ResDataInner> = {
+//   result: ResDataInner;
+//   code: number,
+//   msg: string,
+// };

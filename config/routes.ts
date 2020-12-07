@@ -36,6 +36,10 @@
 
 export default [
   {
+    path: '/login',
+    component: '@/pages/Login',
+  },
+  {
     path: '/',
     component: '@/layouts/index',
     routes: [
@@ -63,10 +67,6 @@ export default [
             component: '@/pages/Dashboard/Hooks',
           },
         ],
-      },
-      {
-        path: '/login',
-        component: '@/pages/Login',
       },
       {
         component: '@/pages/404',
