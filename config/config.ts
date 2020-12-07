@@ -5,6 +5,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
+  styles: ['#root{min-height: 100vh;display: flex;}'],
   //title 应该和国际化配合使用
   title: 'umi@3', //https://umijs.org/zh-CN/config#title
   locale: {
