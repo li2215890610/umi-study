@@ -5,7 +5,6 @@
 import { extend, RequestOptionsInit } from 'umi-request';
 import { baseUrlMap, BaseUrlMap } from '@/configs/services';
 import { HttpError, BusinessError } from '@/errors';
-import { message } from 'antd';
 
 const codeMessage: {
   [statusCode: number]: string;
@@ -72,6 +71,8 @@ const errorHandler = (error: { response: Response }): void => {
       statusCode: -1,
     });
   }
+
+  throw error;
 };
 
 const AJAX = extend({
@@ -104,7 +105,7 @@ type ResDataInner = any;
 export const requestHttp = <ReqData extends object, ResDataInner>(
   req: Req<ReqData>,
 ): Promise<ResDataInner> => {
-  return new Promise(resolve => {
+  return new Promise((rselove, reject) => {
     const requestData = {
       method: (req.method && req.method.toLocaleLowerCase()) || 'get',
       data: req.data,
@@ -137,27 +138,42 @@ export const requestHttp = <ReqData extends object, ResDataInner>(
         }
       })
       .then(res => {
-        if (res.code === 0) {
-          return resolve(res.result);
-        } else {
-          debugger;
-          throw new BusinessError({
-            message: (res && res.msg) || '未知错误[requestHttp]',
-            code: (res && res.code) || -1,
-            req,
-          });
+        if (res) {
+          if (res && res.code === 0) {
+            return rselove(res.result);
+          } else {
+            throw new BusinessError({
+              message: (res && res.msg) || '未知错误[f0]',
+              code: (res && res.code) || -1,
+              req,
+            });
+          }
         }
-      })
-      .catch(e => {
-        console.log(e, '_____e____');
-
-        message.error(e);
       });
+    // .catch(e => {
+    //   console.log(e, 'http_____e____');
+    //   message.success(e);
+    // });
   });
 };
 
-// type F0ResData<ResDataInner> = {
-//   result: ResDataInner;
-//   code: number,
-//   msg: string,
-// };
+type F0ResData<ResDataInner> = {
+  result: ResDataInner;
+  code: number;
+  msg: string;
+};
+
+// export const handler = ((res:F0ResData<any>) => {
+//   debugger
+//   if (res) {
+//     if (res && res.code === 0) {
+//       return res.result;
+//     } else {
+//       // throw new BusinessError({
+//       //   message: (res && res.msg) || '未知错误[f0]',
+//       //   code: (res && res.code) || -1,
+//       // });
+//       throw new Error((res && res.msg) || '未知错误[f0]');
+//     }
+//   }
+// });

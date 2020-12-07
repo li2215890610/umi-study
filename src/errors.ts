@@ -101,10 +101,12 @@ export function handleBusinessError(
     actionPayload: context.effectArgs[0].payload,
   };
   if (errInfo.message === '登录失效' || err.code === 1004) {
-    dispatch({
-      type: 'authorization/expired',
-    });
+    // 登陆失效重新登陆
+    // dispatch({
+    //   type: 'authorization/expired',
+    // });
   } else {
+    debugger;
     const showMessage = `${errInfo.message}[${errInfo.code}]`;
     message.error(showMessage);
   }
@@ -126,6 +128,6 @@ export function handleDvaEffectError(
     actionPayload: context.effectArgs[0].payload,
   };
   debugger;
-  const showMessage = `未知错误`;
+  const showMessage = `未知错误${errInfo.message}`;
   message.error(showMessage);
 }

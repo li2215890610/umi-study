@@ -34,11 +34,6 @@ export async function fetchLogin(params: fetchLoginParams) {
 
   const resTransfer = (res: ResDataInner): fetchLoginResult | void => {
     console.log(res, '_________');
-
-    // return res;
-    // if (res.length) {
-    //   return res;
-    // }
   };
 
   return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(res =>
