@@ -10,12 +10,12 @@ const Authorization: React.FC<{}> = props => {
   /**
    * 加载状态
    */
-  const loading = useSelector((state: RootState) => {
-    return (
-      !!state.loading.effects['user/fetch'] ||
-      !!state.loading.effects['store/fetch']
-    );
-  });
+  // const loading = useSelector((state: RootState) => {
+  //   return (
+  //     !!state.loading.effects['user/fetch'] ||
+  //     !!state.loading.effects['store/fetch']
+  //   );
+  // });
 
   /**
    * 通过获取用户信息 和 店铺信息检查登录状态
@@ -42,7 +42,7 @@ const Authorization: React.FC<{}> = props => {
         props.children
       ) : (
         <div className={styles.content}>
-          {loading ? (
+          {false ? (
             <Spin />
           ) : (
             <Result
