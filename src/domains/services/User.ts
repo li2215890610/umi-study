@@ -14,7 +14,6 @@ export async function fetchUser(params: UserFetchParams) {
     jinjuId: string;
     nickname: string;
     email: string;
-    introduction: string;
     avatar: string;
     mobile: string;
   };
@@ -22,25 +21,17 @@ export async function fetchUser(params: UserFetchParams) {
   const reqTransfer = (): Req<ReqData> => {
     return {
       method: 'GET',
-      url: '@mpApi/user',
+      url: '@userApi/info',
     };
   };
 
   const resTransfer = (res: ResDataInner): UserFetchResult | null => {
-    if (!res) {
-      return null;
-    }
     return {
-      // jinjuId: res.jinjuId,
-      // mobile: res.mobile,
-      // nickname: res.nickname,
-      // email: res.email,
-      // introduction: res.introduction,
-      // avatar: http2https(res.avatar),
-      // type: {
-      //   0: UserType.PRIMARY,
-      //   1: UserType.SUB,
-      // }[res.type],
+      jinjuId: res.jinjuId,
+      mobile: res.mobile,
+      nickname: res.nickname,
+      email: res.email,
+      avatar: http2https(res.avatar),
     };
   };
 

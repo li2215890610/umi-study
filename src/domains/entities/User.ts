@@ -3,6 +3,5 @@ export type User = {
   mobile: string;
   nickname: string;
   email: string;
-  introduction: string;
   avatar: string;
 };

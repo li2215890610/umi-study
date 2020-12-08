@@ -27,14 +27,10 @@ export async function fetchLogin(params: fetchLoginParams) {
         password: params.password,
         username: params.username,
       },
-      // formData: true,
-      // delay: 2 * 1000
     };
   };
 
-  const resTransfer = (res: ResDataInner): fetchLoginResult | void => {
-    console.log(res, '_________');
-  };
+  const resTransfer = (res: ResDataInner): fetchLoginResult | void => {};
 
   return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(res =>
     resTransfer(res),

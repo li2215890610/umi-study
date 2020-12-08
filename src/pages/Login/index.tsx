@@ -14,12 +14,7 @@ import * as Model from './model';
 import * as Action from './action';
 import styles from './index.less';
 
-interface Props extends ConnectProps {
-  login: LoginModelState['state'];
-  loading: boolean;
-}
-
-const Login: FC<Props> = ({ login }) => {
+const Login: FC = () => {
   // console.log(login,loading);
   const [form] = Form.useForm();
   const dispatch = useDispatch();
@@ -150,9 +145,4 @@ const Login: FC<Props> = ({ login }) => {
   );
 };
 
-export default connect(
-  ({ login, loading }: { login: Props['login']; loading: Loading }) => ({
-    login,
-    loading: loading.models.login,
-  }),
-)(Login);
+export default Login;

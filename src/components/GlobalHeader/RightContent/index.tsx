@@ -6,10 +6,10 @@ import Account from './Account';
 
 const RightContent: React.FC<{}> = () => (
   <div className={styles.rc}>
-    <Tooltip title="帮助文档" placement="bottom">
+    <Tooltip title="源码地址" placement="bottom">
       <a
         target="_blank"
-        href="www.baidu.com"
+        href="https://github.com/li2215890610/umi-study"
         rel="noopener noreferrer"
         className={styles.action}
       >

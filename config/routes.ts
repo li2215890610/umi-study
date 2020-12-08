@@ -43,6 +43,11 @@ export default [
     path: '/',
     component: '@/layouts/index',
     routes: [
+      //重定向 login页面
+      {
+        path: '/',
+        redirect: '/login',
+      },
       {
         path: '/dashboard',
         component: '@/pages/Dashboard',
