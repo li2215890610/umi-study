@@ -50,7 +50,7 @@ export default [
       },
       {
         path: '/dashboard',
-        component: '@/pages/Dashboard',
+        component: '@/pages/Dashboard/layout',
         routes: [
           {
             path: '/dashboard',
@@ -60,6 +60,11 @@ export default [
             path: '/dashboard/main',
             exact: true,
             component: '@/pages/Dashboard/Main',
+          },
+          {
+            path: '/dashboard/category',
+            exact: true,
+            component: '@/pages/Dashboard/Category',
           },
           {
             path: '/dashboard/locales',

@@ -1,0 +1,75 @@
+@import '~antd/es/style/themes/default.less';
+
+@transition-config: 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+.dashboard {
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+.menu {
+  width: 150px;
+  transition: width @transition-config;
+
+  border-right: 1px solid @border-color-split;
+  background-color: #fff;
+
+  .menuInner {
+    overflow: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+
+    :global(.anticon-container) {
+      display: block !important;
+    }
+  }
+
+  .trigger {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .label {
+      position: absolute;
+      left: 52px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform @transition-config, opacity @transition-config;
+    }
+  }
+}
+.content {
+  transition: width @transition-config;
+  width: calc(100vw - 150px);
+}
+.collapsed {
+  .menu {
+    width: 64px;
+    .label {
+      transform: translateY(-50%) translateX(-6px) !important;
+      opacity: 0;
+    }
+  }
+  .content {
+    width: calc(100vw - 64px);
+  }
+}
+
+.breadcrumb {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
