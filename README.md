@@ -12,4 +12,5 @@ Start the dev server,
 
 ```bash
 $ yarn start
+$ PROXY_ENV=development yarn start
 ```

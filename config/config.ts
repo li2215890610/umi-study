@@ -24,8 +24,7 @@ export default defineConfig({
       pathRewrite: { '^/businessAssistantApi': '' },
     },
     '/userApi': {
-      target:
-        'https://www.easy-mock.com/mock/5fcd93584ae32e320c62ccd3/UmiV3/user',
+      target: 'http://127.0.0.1:10086/mock/userApi/',
       changeOrigin: true,
       pathRewrite: { '^/userApi': '' },
     },

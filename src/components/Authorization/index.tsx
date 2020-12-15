@@ -24,9 +24,11 @@ const Authorization: React.FC<{}> = props => {
   });
 
   useEffect(() => {
-    dispatch({
-      type: 'user/fetch',
-    });
+    if ('session') {
+      dispatch({
+        type: 'user/fetch',
+      });
+    }
   }, []);
 
   return (
