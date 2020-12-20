@@ -1,12 +1,5 @@
 import React, { FC } from 'react';
-import {
-  LoginModelState,
-  ConnectProps,
-  Loading,
-  connect,
-  useDispatch,
-  useSelector,
-} from 'umi';
+import { useDispatch, useSelector } from 'umi';
 import { RootState } from '@/models/RootState';
 import { Form, Input, Button, Space, Spin } from 'antd';
 import { TNAME } from '@/utils/action';

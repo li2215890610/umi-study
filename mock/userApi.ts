@@ -15,4 +15,9 @@ export default {
     code: 0,
     msg: '',
   },
+  'GET /mock/userApi/async_logout': {
+    result: null,
+    code: 0,
+    msg: '',
+  },
 };

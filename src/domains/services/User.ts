@@ -48,7 +48,7 @@ export async function logout() {
   type ResDataInner = {};
   const reqTransfer = (): Req<ReqData> => {
     return {
-      url: '@passportApi/api/sso/async_logout',
+      url: '@userApi/async_logout',
       method: 'GET',
       // credentials: 'include',
     };
