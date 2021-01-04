@@ -33,6 +33,11 @@ export default defineConfig({
       changeOrigin: true,
       pathRewrite: { '^/categoryApi': '' },
     },
+    '/articleApi': {
+      target: 'http://127.0.0.1:10086/mock/articleApi/',
+      changeOrigin: true,
+      pathRewrite: { '^/articleApi': '' },
+    },
   },
   hash: true, //https://umijs.org/zh-CN/config#hash
   // dva:{//https://umijs.org/zh-CN/plugins/plugin-dva

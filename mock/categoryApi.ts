@@ -1,3 +1,5 @@
+// 文章分类
+
 export default {
   'GET /mock/categoryApi/category': {
     result: {

@@ -1,3 +1,4 @@
+// 用户信息
 export default {
   'GET /mock/userApi/info': {
     result: {

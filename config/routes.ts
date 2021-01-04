@@ -67,6 +67,11 @@ export default [
             component: '@/pages/Dashboard/Category',
           },
           {
+            path: '/dashboard/article',
+            exact: true,
+            component: '@/pages/Dashboard/Article',
+          },
+          {
             path: '/dashboard/locales',
             exact: true,
             component: '@/pages/Dashboard/Locales',

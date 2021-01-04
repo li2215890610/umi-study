@@ -38,9 +38,8 @@ const breadcrumbNameMap: {
 
   '/dashboard/category': '文章分类',
 
-  '/dashboard/article': '订单管理',
-  '/dashboard/article/list': '订单查询',
-  '/dashboard/article/detail': '订单详情',
+  '/dashboard/article': '文章列表',
+  '/dashboard/article/detail': '文章详情',
 
   '/dashboard/analysis': '数据分析',
   '/dashboard/setting': '设置',
@@ -84,7 +83,7 @@ const DashboardLayout: React.FC<RouteComponentProps> = props => {
     },
     {
       key: 'article',
-      label: '文章管理',
+      label: '文章列表',
       icon: (
         <Space>
           <ContainerOutlined />
