@@ -1,16 +1,29 @@
 import { requestHttp, Req } from '@/utils/request';
 import { Article, Status } from '../entities/Article';
 
-enum BackEndStatus {
-  SUCCESS = 'SUCCESS',
-  REJECT = 'REJECT',
-  PENDING = 'PENDING',
+export enum BackendStatusFilter {
+  ALL = '',
+  SUCCESS = '0',
+  REJECT = '1',
+  PENDING = '2',
+}
+
+export enum ArticleStatusFilter {
+  ALL,
+  SUCCESS,
+  REJECT,
+  PENDING,
 }
 
 /**
  * 获取 文章列表
  */
-export type ArticleFetchParams = void;
+export type ArticleFetchParams = {
+  pageNum: number;
+  pageSize: number;
+  statusFilter: ArticleStatusFilter;
+  keyword?: string;
+};
 export type ArticleFetchResult = {
   page: number;
   totalPage: number;
@@ -18,14 +31,25 @@ export type ArticleFetchResult = {
   list: Article[];
 };
 export async function fetchArticle(params: ArticleFetchParams) {
-  type ReqData = {};
+  enum BackendStatus {
+    SUCCESS = '0',
+    REJECT = '1',
+    PENDING = '2',
+  }
+
+  type ReqData = {
+    page: number;
+    page_size: number;
+    search: string;
+    state: BackendStatusFilter;
+  };
 
   type ResDataInner = {
     list: {
       title: string;
       id: number;
       pv: number;
-      status: BackEndStatus;
+      status: BackendStatus;
       createTime: Date;
     }[];
     page: number;
@@ -37,6 +61,17 @@ export async function fetchArticle(params: ArticleFetchParams) {
     return {
       method: 'GET',
       url: '@articleApi/list',
+      params: {
+        page: params.pageNum,
+        page_size: params.pageSize,
+        search: params.keyword || '',
+        state: {
+          [ArticleStatusFilter.ALL]: BackendStatusFilter.ALL,
+          [ArticleStatusFilter.SUCCESS]: BackendStatusFilter.SUCCESS,
+          [ArticleStatusFilter.PENDING]: BackendStatusFilter.PENDING,
+          [ArticleStatusFilter.REJECT]: BackendStatusFilter.REJECT,
+        }[params.statusFilter],
+      },
     };
   };
 
@@ -52,9 +87,9 @@ export async function fetchArticle(params: ArticleFetchParams) {
             name: e.title,
             pv: e.pv,
             status: {
-              [BackEndStatus.PENDING]: Status.PENDING,
-              [BackEndStatus.REJECT]: Status.REJECT,
-              [BackEndStatus.SUCCESS]: Status.SUCCESS,
+              [BackendStatus.SUCCESS]: Status.SUCCESS,
+              [BackendStatus.PENDING]: Status.PENDING,
+              [BackendStatus.REJECT]: Status.REJECT,
             }[e.status],
             createTime: e.createTime,
           },

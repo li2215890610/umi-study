@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'umi';
-import { Table, Tag, Space } from 'antd';
+import { Table, Space, Tabs } from 'antd';
 import { RootState } from '@/models/RootState';
 import { TNAME } from '@/utils/action';
-import { Article } from './entities/Article';
 import * as Model from './model';
 import * as Action from './action';
 
-export type CategorySelectorItem = Pick<Article, 'id'>;
+const { TabPane } = Tabs;
+
+// export type CategorySelectorItem = Pick<Article, 'id'>;
 
 const List: React.FC<{}> = () => {
   const dispatch = useDispatch();
@@ -23,12 +24,36 @@ const List: React.FC<{}> = () => {
   console.log(state);
 
   useEffect(() => {
-    dispatch(Action.fetch());
+    dispatch(
+      Action.fetch({
+        pageNum: 1,
+        pageSize: 5,
+        statusFilter: 0,
+      }),
+    );
   }, []);
 
   // Article{fetching}
   return (
     <>
+      <Tabs
+        defaultActiveKey=""
+        type="card"
+        size="large"
+        onChange={key => {
+          dispatch(
+            Action.fetch({
+              pageNum: 1,
+              pageSize: 5,
+              statusFilter: +key,
+            }),
+          );
+        }}
+      >
+        {[...Model.articleStatus].map(([filter, label]) => (
+          <TabPane tab={label} key={filter.toString()} />
+        ))}
+      </Tabs>
       <Table
         columns={[
           {
@@ -41,12 +66,6 @@ const List: React.FC<{}> = () => {
             dataIndex: ['article', 'pv'],
             key: 'pv',
             render: pv => pv || '_',
-          },
-          {
-            title: '状态',
-            dataIndex: ['article', 'status'],
-            key: 'status',
-            render: status => Model.articleStatus.get(status) || '全部',
           },
           {
             title: '创建时间',

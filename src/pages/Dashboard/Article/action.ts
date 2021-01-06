@@ -7,8 +7,9 @@ export enum ActionTypes {
   FetchSucceeded = 'fetchSucceeded',
 }
 
-export const fetch = () => ({
+export const fetch = (params: Service.ArticleFetchParams) => ({
   type: TNAME(ActionTypes.Fetch, NS),
+  payload: params,
 });
 
 export const fetchSucceeded = (params: Service.ArticleFetchResult) => ({

@@ -7,9 +7,10 @@ import * as Action from './action';
 export const NS = 'article';
 
 export const articleStatus = new Map([
-  [Entity.Status.SUCCESS, '成功'],
-  [Entity.Status.PENDING, '进行中'],
-  [Entity.Status.REJECT, '失败'],
+  [Service.ArticleStatusFilter.ALL, '全部'],
+  [Service.ArticleStatusFilter.SUCCESS, '成功'],
+  [Service.ArticleStatusFilter.PENDING, '进行中'],
+  [Service.ArticleStatusFilter.REJECT, '失败'],
 ]);
 
 export interface State {
@@ -17,6 +18,8 @@ export interface State {
   page: 1;
   pageSzie: 5;
   totalPage: 0;
+  statusFilter: Service.ArticleStatusFilter.ALL;
+  keyword: '';
 }
 
 export interface ArticleModelState {
@@ -38,14 +41,16 @@ const defaultState: State = {
   page: 1,
   pageSzie: 5,
   totalPage: 0,
+  statusFilter: 0,
+  keyword: '',
 };
 
 const Article: ArticleModelState = {
   namespace: NS,
   state: defaultState,
   effects: {
-    *[Action.ActionTypes.Fetch](_, { call, put }) {
-      const response = yield call(Service.fetchArticle);
+    *[Action.ActionTypes.Fetch](action, { call, put }) {
+      const response = yield call(Service.fetchArticle, action.payload);
       yield put(removeNS(Action.fetchSucceeded(response), NS));
     },
   },

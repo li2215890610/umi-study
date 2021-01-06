@@ -9,7 +9,7 @@ export type Article = {
   article: {
     name: string;
     pv: number;
-    status: Status;
     createTime: Date;
+    status: Status;
   };
 };
