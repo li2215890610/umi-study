@@ -104,7 +104,7 @@ export async function fetchArticle(params: ArticleFetchParams) {
 }
 
 /**
- * 删除等级
+ * 删除文章
  */
 export type ArticleDeleteParams = Pick<Article, 'id'>;
 export type ArticleDeleteResult = void;
