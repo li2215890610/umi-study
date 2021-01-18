@@ -102,3 +102,32 @@ export async function fetchArticle(params: ArticleFetchParams) {
     resTransfer(res),
   );
 }
+
+/**
+ * 删除等级
+ */
+export type ArticleDeleteParams = Pick<Article, 'id'>;
+export type ArticleDeleteResult = void;
+export async function deleteArticle(params: ArticleDeleteParams) {
+  type ReqData = {
+    id: number;
+  };
+
+  type ResDataInner = {};
+
+  const reqTransfer = (): Req<ReqData> => {
+    return {
+      method: 'POST',
+      url: '@articleApi/delete',
+      // requestType: 'form',
+      data: {
+        id: parseInt(params.id),
+      },
+      auth: true,
+    };
+  };
+
+  const resTransfer = (): ArticleDeleteResult | void => {};
+
+  return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(resTransfer);
+}

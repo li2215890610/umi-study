@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'umi';
-import { Table, Space, Tabs } from 'antd';
+import { Table, Space, Tabs, Popconfirm } from 'antd';
 import { RootState } from '@/models/RootState';
 import { TNAME } from '@/utils/action';
 import * as Model from './model';
 import * as Action from './action';
 
 const { TabPane } = Tabs;
-
-// export type CategorySelectorItem = Pick<Article, 'id'>;
 
 const List: React.FC<{}> = () => {
   const dispatch = useDispatch();
@@ -33,7 +31,6 @@ const List: React.FC<{}> = () => {
     );
   }, []);
 
-  // Article{fetching}
   return (
     <>
       <Tabs
@@ -55,6 +52,7 @@ const List: React.FC<{}> = () => {
         ))}
       </Tabs>
       <Table
+        loading={fetching}
         columns={[
           {
             title: '文章名称',
@@ -76,10 +74,32 @@ const List: React.FC<{}> = () => {
           {
             title: '操作',
             key: 'action',
-            render: () => (
+            render: e => (
               <Space size="middle">
-                <a>下架</a>
-                <a>删除</a>
+                <Popconfirm
+                  placement="topRight"
+                  title={'确定要下架吗?'}
+                  onConfirm={() => {}}
+                  okText="确定"
+                  cancelText="取消"
+                >
+                  <a>下架</a>
+                </Popconfirm>
+                <Popconfirm
+                  placement="topLeft"
+                  title={'确定要删除吗?'}
+                  onConfirm={() => {
+                    dispatch(
+                      Action.deleteArticle({
+                        id: e.id,
+                      }),
+                    );
+                  }}
+                  okText="确定"
+                  cancelText="取消"
+                >
+                  <a>删除</a>
+                </Popconfirm>
               </Space>
             ),
           },

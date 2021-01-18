@@ -36,4 +36,9 @@ export default {
     code: 0,
     msg: '',
   },
+  'POST /mock/articleApi/delete': {
+    result: null,
+    code: 0,
+    msg: '',
+  },
 };

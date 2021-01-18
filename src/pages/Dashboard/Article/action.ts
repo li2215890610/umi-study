@@ -5,6 +5,9 @@ import * as Service from './services/Article';
 export enum ActionTypes {
   Fetch = 'fetch',
   FetchSucceeded = 'fetchSucceeded',
+  UpdateSucceeded = 'updateSucceeded',
+  Reset = 'reset',
+  Delete = 'delete',
 }
 
 export const fetch = (params: Service.ArticleFetchParams) => ({
@@ -12,7 +15,16 @@ export const fetch = (params: Service.ArticleFetchParams) => ({
   payload: params,
 });
 
-export const fetchSucceeded = (params: Service.ArticleFetchResult) => ({
+export const fetchSucceeded = (
+  params: Service.ArticleFetchResult & {
+    statusFilter: Service.ArticleFetchParams['statusFilter'];
+  },
+) => ({
   type: TNAME(ActionTypes.FetchSucceeded, NS),
+  payload: params,
+});
+
+export const deleteArticle = (params: Service.ArticleDeleteParams) => ({
+  type: TNAME(ActionTypes.Delete, NS),
   payload: params,
 });

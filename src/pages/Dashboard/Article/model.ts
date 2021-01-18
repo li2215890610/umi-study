@@ -1,5 +1,6 @@
 import { Effect, ImmerReducer } from 'umi';
 import { removeNS } from '@/utils/action';
+import { RootState } from '@/models/RootState';
 import * as Service from './services/Article';
 import * as Entity from './entities/Article';
 import * as Action from './action';
@@ -15,11 +16,11 @@ export const articleStatus = new Map([
 
 export interface State {
   list: Entity.Article[];
-  page: 1;
-  pageSzie: 5;
-  totalPage: 0;
-  statusFilter: Service.ArticleStatusFilter.ALL;
-  keyword: '';
+  page: number;
+  pageSzie: number;
+  totalPage: number;
+  statusFilter: Service.ArticleStatusFilter;
+  keyword: '' | string;
 }
 
 export interface ArticleModelState {
@@ -27,6 +28,7 @@ export interface ArticleModelState {
   state: State;
   effects: {
     [Action.ActionTypes.Fetch]: Effect;
+    [Action.ActionTypes.Delete]: Effect;
   };
   reducers: {
     [Action.ActionTypes.FetchSucceeded]: ImmerReducer<
@@ -49,18 +51,42 @@ const Article: ArticleModelState = {
   namespace: NS,
   state: defaultState,
   effects: {
-    *[Action.ActionTypes.Fetch](action, { call, put }) {
-      const response = yield call(Service.fetchArticle, action.payload);
-      yield put(removeNS(Action.fetchSucceeded(response), NS));
+    *[Action.ActionTypes.Fetch]({ payload }, { call, put }) {
+      const response = yield call(Service.fetchArticle, payload);
+      yield put(
+        removeNS(Action.fetchSucceeded({ ...payload, ...response }), NS),
+      );
+    },
+    *[Action.ActionTypes.Delete]({ payload }, { call, put, select }) {
+      yield call(Service.deleteArticle, { payload });
+      const state: RootState['article'] = (yield select()).article;
+      console.log(state, '1___11');
+
+      // const state: RootState = yield select();
+      // const listState = state[NS];
+
+      yield put(
+        removeNS(
+          Action.fetch({
+            pageNum: 1,
+            pageSize: 5,
+            statusFilter: state.statusFilter,
+          }),
+          NS,
+        ),
+      );
     },
   },
   reducers: {
     [Action.ActionTypes.FetchSucceeded]: (_, { payload }) => {
+      console.log(payload, '____payload_____');
+
       return {
         page: payload.page,
         list: payload.list,
         pageSize: payload.pageSize,
         totalPage: payload.totalPage,
+        statusFilter: payload.statusFilter,
       };
     },
   },
