@@ -1,0 +1,51 @@
+.list {
+  min-height: 57px;
+}
+.list.sorting {
+  :global(.editable-cell-value-wrap) {
+    border-color: transparent !important;
+  }
+}
+.tip {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+:global(.editable-cell) {
+  position: relative;
+}
+
+:global(.editable-cell-value-wrap) {
+  border: 1px dashed transparent;
+  padding: 4px 11px;
+  cursor: pointer;
+}
+
+:global(.editable-cell-value-wrap.disabled) {
+  cursor: default;
+}
+
+:global(.ant-list-item:hover) {
+  :global(.editable-cell-value-wrap) {
+    border-color: #d9d9d9;
+    border-radius: 2px;
+  }
+  :global(.editable-cell-value-wrap.disabled) {
+    border-color: transparent;
+  }
+}
+:global(.ant-list-split .ant-list-item) {
+  background-color: #fff;
+}
+:global(.itemGhost) {
+  // background-color: lighten(@primary-color, 30%) !important;
+  // border: 1px dashed @primary-color;
+  // border-bottom: 1px dashed @primary-color!important;
+  color: transparent;
+  margin-top: -1px;
+}
+:global(.itemDrag) {
+  :global(.editable-cell-value-wrap) {
+    border-color: transparent !important;
+  }
+}

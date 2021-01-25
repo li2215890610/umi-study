@@ -29,6 +29,7 @@ export interface ArticleModelState {
   effects: {
     [Action.ActionTypes.Fetch]: Effect;
     [Action.ActionTypes.Delete]: Effect;
+    [Action.ActionTypes.BatchUpDownShelfArticle]: Effect;
   };
   reducers: {
     [Action.ActionTypes.FetchSucceeded]: ImmerReducer<
@@ -58,12 +59,31 @@ const Article: ArticleModelState = {
       );
     },
     *[Action.ActionTypes.Delete]({ payload }, { call, put, select }) {
-      yield call(Service.deleteArticle, { payload });
+      yield call(Service.deleteArticle, payload);
       const state: RootState['article'] = (yield select()).article;
       console.log(state, '1___11');
 
       // const state: RootState = yield select();
       // const listState = state[NS];
+
+      yield put(
+        removeNS(
+          Action.fetch({
+            pageNum: 1,
+            pageSize: 5,
+            statusFilter: state.statusFilter,
+          }),
+          NS,
+        ),
+      );
+    },
+    *[Action.ActionTypes.BatchUpDownShelfArticle](
+      { payload },
+      { call, put, select },
+    ) {
+      yield call(Service.batchUpDownShelfArticle, payload);
+      const state: RootState['article'] = (yield select())[NS];
+      console.log(state, '1___11');
 
       yield put(
         removeNS(

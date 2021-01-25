@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'umi';
+import { useDispatch, useSelector, Link } from 'umi';
 import { Table, Space, Tabs, Popconfirm } from 'antd';
 import { RootState } from '@/models/RootState';
 import { TNAME } from '@/utils/action';
@@ -73,25 +73,35 @@ const List: React.FC<{}> = () => {
           },
           {
             title: '操作',
-            key: 'action',
-            render: e => (
+            key: 'x',
+            render: (_, article) => (
               <Space size="middle">
-                <Popconfirm
+                {/* <Popconfirm
                   placement="topRight"
                   title={'确定要下架吗?'}
-                  onConfirm={() => {}}
+                  onConfirm={() => {
+                    const { status} = article.article
+                    dispatch(
+                      Action.batchUpDownShelfProduct({
+                        status: status,
+                        ids: [article.id],
+                      }),
+                    );
+                  }}
                   okText="确定"
                   cancelText="取消"
                 >
-                  <a>下架</a>
+                  <a>上架</a>
                 </Popconfirm>
+                 */}
+                <Link to={`/dashboard/article/detail/${article.id}`}>编辑</Link>
                 <Popconfirm
                   placement="topLeft"
                   title={'确定要删除吗?'}
                   onConfirm={() => {
                     dispatch(
                       Action.deleteArticle({
-                        id: e.id,
+                        id: article.id,
                       }),
                     );
                   }}

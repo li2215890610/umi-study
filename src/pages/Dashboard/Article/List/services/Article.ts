@@ -131,3 +131,48 @@ export async function deleteArticle(params: ArticleDeleteParams) {
 
   return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(resTransfer);
 }
+
+//上下架文章
+export type ArticleBatchUpDownShelfParams = {
+  ids: Article['id'][];
+  status: Status;
+};
+export type ArticleBatchUpDownShelfResult = void;
+export async function batchUpDownShelfArticle(
+  params: ArticleBatchUpDownShelfParams,
+) {
+  enum BackendStatus {
+    ON_SHELF = 1, //上架
+    OFF_SHELF = 0, // 下架
+  }
+
+  type ReqData = {
+    ids: string;
+    state: BackendStatus;
+  };
+
+  type ResDataInner = void;
+
+  const reqTransfer = (): Req<ReqData> => {
+    return {
+      method: 'POST',
+      url: `@articleApi/batch/up_down_shelf`,
+      auth: true,
+      requestType: 'form',
+      data: {
+        ids: params.ids.join(','),
+        state: {
+          [Status.SUCCESS]: BackendStatus.ON_SHELF,
+          [Status.PENDING]: BackendStatus.ON_SHELF, // 进行中的状态，也可以上架
+          [Status.REJECT]: BackendStatus.OFF_SHELF,
+        }[params.status],
+      },
+    };
+  };
+
+  const resTransfer = (
+    res: ResDataInner,
+  ): ArticleBatchUpDownShelfResult | void => {};
+
+  return requestHttp<ReqData, ResDataInner>(reqTransfer()).then(resTransfer);
+}

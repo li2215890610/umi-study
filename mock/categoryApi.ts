@@ -25,4 +25,9 @@ export default {
     code: 0,
     msg: '',
   },
+  'POST /mock/categoryApi/create': {
+    result: null,
+    code: 0,
+    msg: '',
+  },
 };

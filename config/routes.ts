@@ -66,11 +66,18 @@ export default [
             exact: true,
             component: '@/pages/Dashboard/Category',
           },
+
+          {
+            path: '/dashboard/article/detail/:id?',
+            exact: true,
+            component: '@/pages/Dashboard/Article/Detail',
+          },
           {
             path: '/dashboard/article',
             exact: true,
-            component: '@/pages/Dashboard/Article',
+            component: '@/pages/Dashboard/Article/List',
           },
+
           {
             path: '/dashboard/locales',
             exact: true,

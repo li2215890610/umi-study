@@ -8,6 +8,7 @@ export enum ActionTypes {
   UpdateSucceeded = 'updateSucceeded',
   Reset = 'reset',
   Delete = 'delete',
+  BatchUpDownShelfArticle = 'batchUpDownShelfArticle', //文章上下架
 }
 
 export const fetch = (params: Service.ArticleFetchParams) => ({
@@ -26,5 +27,12 @@ export const fetchSucceeded = (
 
 export const deleteArticle = (params: Service.ArticleDeleteParams) => ({
   type: TNAME(ActionTypes.Delete, NS),
+  payload: params,
+});
+
+export const batchUpDownShelfProduct = (
+  params: Service.ArticleBatchUpDownShelfParams,
+) => ({
+  type: TNAME(ActionTypes.BatchUpDownShelfArticle, NS),
   payload: params,
 });
