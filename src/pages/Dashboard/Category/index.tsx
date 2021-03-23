@@ -51,6 +51,7 @@ const Category: React.FC<{}> = () => {
   });
   const [newCategoryVisible, setNewCategoryVisible] = useState(false);
   const [newCategoryForm] = Form.useForm();
+  const { list } = state;
 
   return (
     <div style={{ marginTop: 16 }}>
