@@ -1,7 +1,7 @@
 import { NS } from './model';
 import { TNAME } from '@/utils/action';
 import * as Service from './services/Category';
-import * as Entity from './domains/entities/Category';
+import * as Entity from './entities/Category';
 
 export enum ActionTypes {
   Fetch = 'fetch',

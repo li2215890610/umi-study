@@ -4,9 +4,9 @@ import { Category } from '../entities/Category';
 /**
  * 获取 文章分类信息
  */
-export type CategoryFetchParams = void;
-export type CategoryFetchResult = Category[];
-export async function fetchCategory(params: CategoryFetchParams) {
+export type CategoryListFetchParams = void;
+export type CategoryListFetchResult = Category[];
+export async function fetchCategory(params: CategoryListFetchParams) {
   type ReqData = {};
 
   type ResDataInner = {
@@ -21,7 +21,7 @@ export async function fetchCategory(params: CategoryFetchParams) {
     };
   };
 
-  const resTransfer = (res: ResDataInner): CategoryFetchResult | null => {
+  const resTransfer = (res: ResDataInner): CategoryListFetchResult | null => {
     return res;
   };
 
