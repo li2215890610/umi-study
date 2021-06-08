@@ -14,6 +14,7 @@ const List: React.FC<{
         style={{ width: 300, height: 200, backgroundColor: 'red' }}
       >
         点我
+        {props.children}
       </div>
     </div>
   );
