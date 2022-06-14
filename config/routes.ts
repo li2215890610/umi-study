@@ -91,6 +91,11 @@ export default [
         ],
       },
       {
+        path: '/setting/user',
+        component: '@/pages/Setting',
+        exact: true,
+      },
+      {
         component: '@/pages/404',
       },
     ],
